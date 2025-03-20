@@ -47,9 +47,12 @@ export default function Home() {
                 <meta name="description" content="Discover top online courses in design, development, business, and more. Upgrade your skills and learn from industry experts." />
                 <meta name="keywords" content="online courses, e-learning, development, business, design, marketing, photography, AWS certification" />
             </Head>
-            <div className="mt-28 bg-[#FFFFF] min-h-screen p-8">
-                <h2 className="text-2xl text-[#E0F7FA] font-bold mb-4">Welcome back, ready for your next lesson?</h2>
-                <div className="relative">
+            <div className="mt-48 sm:mt-52 md:mt-24 lg:mt-28 min-h-screen p-8">
+
+
+
+                {/* <h2 className="text-2xl text-[#E0F7FA] font-bold mb-4">Welcome back, ready for your next lesson?</h2> */}
+                {/* <div className="relative">
                     <div className="flex gap-4">
                         {visibleLessons.map((lesson, index) => (
                             <div key={index} className="w-1/3 p-3 bg-[#F5F5F5] shadow-md">
@@ -72,7 +75,7 @@ export default function Home() {
                             <FaArrowRight />
                         </button>
                     </div>
-                </div>
+                </div> */}
                 <Menu />
 
                 <h2 className="text-2xl font-bold mt-8">Choice favourite course from top category</h2>

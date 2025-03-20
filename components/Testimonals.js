@@ -1,119 +1,104 @@
 "use client";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+import { FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
-import imaga from "../public/Courses/imga.png";
-
-import imge from "../public/Courses/imge.png";
-import imgf from "../public/Courses/imgf.png";
-import imgg from "../public/Courses/imgg.png";
-import igmh from "../public/Courses/igmh.png";
-import imgi from "../public/Courses/imgi.png";
 
 const testimonials = [
-    {
-        name: "Bulkin Simons",
-        feedback: "This is the best platform for learning online!",
-        image: imaga,
-    },
-    {
-        name: "Emma Watson",
-        feedback: "The lessons are very detailed and easy to understand.",
-        image: imgg,
-    },
-    {
-        name: "David Miller",
-        feedback: "Great support from the instructors and mentors!",
-        image: imgi,
-    },
-    {
-        name: "Sophia Brown",
-        feedback: "I improved my skills quickly thanks to these lessons.",
-        image: igmh,
-    },
-    {
-        name: "Sophia Brown",
-        feedback: "I improved my skills quickly thanks to these lessons.",
-        image: imge,
-    },
-    {
-        name: "Sophia Brown",
-        feedback: "I improved my skills quickly thanks to these lessons.",
-        image: imgf,
-    },
+  {
+    name: "Devansh",
+    parentsname: "Scindia",
+    grade: "Grade 3",
+    session: "Matheamatics classes",
+    country: "Germany",
+    state: "Berlin",
+    feedback:
+      "We are very pleased with the online math classes! The instructors ensure that the lessons align with the German curriculum by incorporating the worksheets we provided, making the learning process seamless for my son. Highly recommended!",
+    image: "/Courses/Devansh.jpg",
+  },
+  {
+    name: "Reyansh",
+    parentsname: "Venkat",
+    grade: "Grade 1",
+    session: "Mathematics  and Scratch classes",
+    country: "USA",
+    state: "Florida",
+    feedback:
+      "The exceptional expertise of Chandan Sir at the CodeLibrary have truly ignited my son's passion for mathematics and greatly enhanced his skills.",
+    image: "/Courses/Reyansh.jpg",
+  },
 ];
 
 const Testimonials = () => {
-    const prevRef = useRef(null);
-    const nextRef = useRef(null);
-    const [swiper, setSwiper] = useState(null);
+  const swiperRef = useRef(null);
 
-    useEffect(() => {
-        if (swiper && prevRef.current && nextRef.current) {
-            swiper.navigation.update();
-        }
-    }, [swiper]);
+  return (
+    <div className="bg-blue-200 py-16 flex justify-center">
+      <div className="max-w-4xl w-full px-6 relative">
+        <h2 className="text-center text-4xl font-extrabold mb-10 text-gray-900">
+          What Our Students Say
+        </h2>
 
-    return (
-        <div className="bg-blue-200 py-16  relative">
-            <h2 className="text-center text-3xl font-bold mb-12 text-gray-900">
-                What our students have to say
-            </h2>
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={10}
+          slidesPerView={1}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          loop={true}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg grid grid-cols-[auto,1fr] gap-4 sm:gap-8 items-center text-center sm:text-left">
+                {/* Left Side: Image, Name, Parent Name */}
+                <div className="flex flex-col items-center sm:items-start">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    width={150}
+                    height={130}
+                    className="rounded-t-full mb-4"
+                  />
+                  <h3 className="font-extrabold text-xl text-gray-900">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-gray-700 text-lg font-bold">
+                    Parent's Name : {testimonial.parentsname}
+                  </p>
+                  <p className="text-gray-700 text-lg font-bold">
+                     {testimonial.country}, {testimonial.state}
+                  </p>
+                </div>
 
-            <div className="relative max-w-6xl mx-auto px-4">
-                {/* Custom Navigation Buttons */}
-                <button
-                    ref={prevRef}
-                    className="absolute left-[-50px] top-1/2 transform -translate-y-1/2 bg-teal-500 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-md hover:bg-teal-700 z-20"
-                >
-                    ⬅
-                </button>
-                <button
-                    ref={nextRef}
-                    className="absolute right-[-50px] top-1/2 transform -translate-y-1/2 bg-teal-500 text-white w-10 h-10 flex items-center justify-center rounded-full shadow-md hover:bg-teal-700 z-20"
-                >
-                    ➡
-                </button>
+                {/* Right Side: Session, Grade, Feedback */}
+                <div className="flex flex-col justify-center">
+                  <p className="font-bold text-lg text-gray-900">
+                     {testimonial.session}
+                  </p>
+                  <p className="font-bold text-lg text-gray-900">
+                     {testimonial.grade}
+                  </p>
+                  <p className="text-gray-800 text-base mt-2">
+                    {testimonial.feedback}
+                  </p>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-                {/* Swiper Carousel */}
-                <Swiper
-                    modules={[Navigation]}
-                    onSwiper={setSwiper}
-                    navigation={{
-                        prevEl: prevRef.current,
-                        nextEl: nextRef.current,
-                    }}
-                    spaceBetween={20}
-                    slidesPerView={1}
-                    breakpoints={{
-                        640: { slidesPerView: 1 },
-                        768: { slidesPerView: 2 },
-                        1024: { slidesPerView: 4 },
-                    }}
-                    className="relative"
-                >
-                    {testimonials.map((testimonial, index) => (
-                        <SwiperSlide key={index}>
-                            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                                <Image
-                                    src={testimonial.image}
-                                    alt={testimonial.name}
-                                    width={180}
-                                    height={180}
-                                    className="mx-auto mb-4 rounded-full"
-                                />
-                                <h3 className="font-bold text-lg text-gray-900">{testimonial.name}</h3>
-                                <p className="text-gray-600 mt-2 text-sm">{testimonial.feedback}</p>
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </div>
-        </div>
-    );
+        {/* Next Button */}
+        <button
+          onClick={() => swiperRef.current?.slideNext()}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-teal-500 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:bg-teal-700 transition duration-300"
+        >
+          <FaArrowRight size={20} />
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default Testimonials;

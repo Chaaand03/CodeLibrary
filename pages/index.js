@@ -60,9 +60,12 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
       </Head>
 
       {/* <Navbar /> */}
+      {/* <header className="relative mt-14 sm:mt-8 md:mt-4 lg:mt-0 px-4 sm:px-8 py-8 md:py-16 max-w-6xl mx-auto">
+ */}
 
       {/* Hero Section */}
-      <header className="relative mt-16 px-4 sm:px-8 py-8 md:py-16 max-w-6xl mx-auto">
+      <header className="relative mt-[120px] sm:mt-28 md:mt-14 lg:mt-15 px-4 sm:px-8 py-8 md:py-16 max-w-6xl mx-auto">
+
         <div className="flex flex-col md:flex-row items-center justify-between">
 
           {/* Left Side - Text Section */}
@@ -121,7 +124,7 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
               >
                 <FaBook className="text-green-500 text-lg md:text-xl" />
                 <div>
-                  <span className="text-gray-600 text-xs md:text-sm">5K+</span>
+                  <span className="text-gray-600 font-bold text-xs md:text-sm">50 +</span>
                   <p className="text-green-600 font-bold text-[10px] md:text-xs">Online Courses</p>
                 </div>
               </motion.div>
@@ -134,8 +137,8 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
               >
                 <FaVideo className="text-green-500 text-lg md:text-xl" />
                 <div>
-                  <span className="text-gray-600 text-xs md:text-sm">2K+</span>
-                  <p className="text-green-600 font-bold text-[10px] md:text-xs">Video Courses</p>
+                  {/* <span className="text-gray-600 text-xs md:text-sm">2K+</span> */}
+                  <p className="text-green-600 font-bold text-[10px] md:text-xs">Live Online Session</p>
                 </div>
               </motion.div>
 
@@ -147,7 +150,7 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
               >
                 <FaChalkboardTeacher className="text-green-500 text-lg md:text-xl" />
                 <div>
-                  <span className="text-gray-600 text-xs md:text-sm">250+</span>
+                  <span className="text-gray-600 font-bold text-xs md:text-sm">50+</span>
                   <p className="text-green-600 font-bold text-[10px] md:text-xs">Tutors</p>
                 </div>
               </motion.div>
@@ -180,9 +183,9 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
       {/* Collaborations */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
         <div className="text-center space-y-4">
-          <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-gray-500">
+          {/* <h3 className="text-lg sm:text-xl lg:text-2xl font-extrabold text-gray-500">
             Problem-Solution Hook
-          </h3>
+          </h3> */}
           <p className="text-gray-600 font-bold text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
             Tired of Long, Boring Math/Coding Classes? Your Child Deserves a Better Way.
           </p>
@@ -190,15 +193,6 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
 
         {/* Image Container */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 mt-6 sm:mt-8 justify-center items-center">
-          {/* Small Image */}
-          <Image
-            src={Source}
-            alt="Institution Logo 1"
-            width={700}
-            height={500}
-            className="object-contain w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px]"
-          />
-
           {/* Larger Image */}
           <Image
             src={twoImage}
@@ -214,7 +208,7 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
       {/* import Image from "next/image"; */}
 
       <section className="px-4 sm:px-8 py-12 max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl text-green-500 sm:text-3xl font-bold">Course Benefits Section</h2>
+        <h2 className="text-2xl text-green-500 sm:text-3xl font-bold">Course Benefits</h2>
         <p className="text-gray-600 mt-2">Our amazing 3-step Process</p>
         <div className="flex flex-wrap justify-center gap-6 mt-8">
           <div className="p-6 bg-green-500 rounded-lg shadow-md text-center w-80">
@@ -248,7 +242,7 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
 
 
       <section id="benefits-section" className="px-4 sm:px-8 py-12 max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl text-green-500 sm:text-3xl font-bold">Course Structure Clarity</h2>
+        <h2 className="text-2xl text-green-500 sm:text-3xl font-bold">Course Structure</h2>
 
         <div className="flex flex-wrap justify-center gap-6 mt-8">
           <div className="p-6 bg-green-500 rounded-lg shadow-md text-center w-80">
@@ -272,9 +266,7 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
             <div className="flex justify-center items-center text-4xl  transition-colors duration-300 animate-bounce">
               <FaRocket />
             </div>
-            <h3 className="text-lg  font-semibold">Master Fundamentals (30 Sessions)</h3>
-
-
+            <h3 className="text-lg  font-semibold">Advanced Topics (30 Sessions)</h3>
           </div>
         </div>
       </section>
