@@ -136,6 +136,7 @@ const Navbar = () => {
             </div>
 
             <Link href="/blog" className="block py-2 text-black hover:text-green-500">Blogs</Link>
+            <Link href="/priceing" className="text-black hover:text-green-500">Pricing</Link>
             {/* <Link href="/contact" className="block py-2 text-black hover:text-green-500">Contact</Link> */}
 
             <button

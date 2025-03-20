@@ -4,7 +4,7 @@ import Head from "next/head";
 import Register from "../components/Register";
 import "swiper/css";
 import "swiper/css/navigation";
-import Tesimoinal from "./Tesimoinal";
+import Testimoinal from "./Testimonals";
 
 const HomePage = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -135,7 +135,7 @@ const HomePage = () => {
       </div>
 
       {/* Testimonials Section */}
-      <Tesimoinal />
+      <Testimoinal />
 
       {/* Custom Swiper Navigation CSS */}
       <style jsx>{`

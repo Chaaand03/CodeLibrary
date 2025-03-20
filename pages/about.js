@@ -27,7 +27,7 @@ export default function AboutUs() {
       </Head>
 
       {/* About Us Section */}
-      <section className=" max-w-6xl mx-auto px-4 sm:px-8 py-12">
+      <section className="mt-[130px] sm:mt-28 md:mt-14 lg:mt-15 max-w-6xl mx-auto px-4 sm:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
           <div>

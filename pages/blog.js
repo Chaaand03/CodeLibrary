@@ -34,12 +34,12 @@ export default function BlogSection() {
                 <meta name="description" content="Discover why Swift UI is essential for mobile developers. Learn more about its features and advantages in mobile development." />
                 <meta name="keywords" content="Swift UI, Mobile Development, UI Design, Apple, Programming" />
             </Head>
-            <section className="bg-[#EEF5FF]  py-12 px-6 md:px-16 lg:px-24">
+            <section className="bg-[#EEF5FF] mt-[12px] sm:mt-28 md:mt-14 lg:mt-15 py-12 px-6 md:px-16 lg:px-24">
                 <div className="max-w-6xl mt-28 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
                     <div>
                         <p className="text-gray-600 text-sm">By Themadbrains in <span className="text-green-600 font-semibold">inspiration</span></p>
                         <h1 className="text-3xl md:text-4xl font-bold text-[#2D3A55] mt-2">Why Swift UI Should Be on the Radar of Every Mobile Developer</h1>
-                        <p className="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        {/* <p className="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor</p> */}
                         <button
                             onClick={handleOpenRegister}
                             className="mt-6 bg-[#1DBF73] text-white px-6 py-3 rounded-md font-medium hover:bg-[#16a062] transition duration-300"

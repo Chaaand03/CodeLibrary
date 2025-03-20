@@ -60,9 +60,12 @@ Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
       </Head>
 
       {/* <Navbar /> */}
+      {/* <header className="relative mt-14 sm:mt-8 md:mt-4 lg:mt-0 px-4 sm:px-8 py-8 md:py-16 max-w-6xl mx-auto">
+ */}
 
       {/* Hero Section */}
-      <header className="relative mt-16 px-4 sm:px-8 py-8 md:py-16 max-w-6xl mx-auto">
+      <header className="relative mt-[120px] sm:mt-28 md:mt-14 lg:mt-15 px-4 sm:px-8 py-8 md:py-16 max-w-6xl mx-auto">
+
         <div className="flex flex-col md:flex-row items-center justify-between">
 
           {/* Left Side - Text Section */}
