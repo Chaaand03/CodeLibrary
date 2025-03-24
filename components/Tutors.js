@@ -10,17 +10,17 @@ const tutors = [
   {
     name: "Abbiramy",
     role: "Math expert",
-    description: "The stars in the key ; the sand on a beach are both chaos.But if you see patterns through the chaos, you're a mathematician.",
+    description: "The stars in the sky, the sand on the beach are both chaos. But if you see patterns through the chaos, you're a mathematician.",
     image: tutora,
   },
   {
     name: "Rishanth",
-    role: "Python and We development expert",
+    role: "Python and Web development expert",
     description: "whatever you do make sure no one does it better than you around you",
     image: imgc,
   },
   {
-    name: "Rishanth",
+    name: "Rakshitha",
     role: "Math and Scratch expert",
     description: "Learn with curiosity, teach with passion.",
     image: imgd,
