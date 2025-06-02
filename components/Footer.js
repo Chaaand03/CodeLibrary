@@ -30,9 +30,9 @@ const Footer = () => {
           <h3 className="font-semibold text-gray-700 mb-4">QUICK LINKS</h3>
           <ul className="space-y-2 text-sm">
             <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/courses">Courses</Link></li>
-            <li><Link href="/contact">Contact US</Link></li>
-            <li><Link href="/priceing">Priceing</Link></li>
+            <li><Link href="/Courses">Courses</Link></li>
+            <li><Link href="/ContactUs">Contact US</Link></li>
+            <li><Link href="/priceing">Pricing</Link></li>
             <li><Link href="/blog">Blog</Link></li>
           </ul>
         </div>

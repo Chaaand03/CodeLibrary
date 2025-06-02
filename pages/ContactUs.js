@@ -57,24 +57,22 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-pink-100 py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-purple-900 mb-2 sm:mb-4">
-            Get in Touch
-          </h2>
-          <p className="text-sm sm:text-base text-gray-700 max-w-2xl mx-auto px-4">
-            We're here to help with your preparation journey
+    <section className="py-10 bg-[#EDE9FE] px-2">
+    <div className="text-center bg-[#EDE9FE]">
+          <h2 className="text-4xl font-bold text-[#301934]">Get in Touch</h2>
+          <p className="mt-2 text-[#301934] py-5">
+          We're here to help with your preparation journey
           </p>
         </div>
-
+    <div className="bg-[#F0F4F8] py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
+      
+      <div className="max-w-7xl mx-auto">
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-          
+        <div className="grid grid-cols-5 gap-4 h-full">
+
           {/* Contact Information Section */}
-          <div className="order-2 lg:order-1">
-            <div className="bg-pink-50 p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200 h-full">
+            <div className="col-span-2 bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200 h-full">
+
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                 Contact Information
               </h3>
@@ -85,7 +83,12 @@ const Contact = () => {
                   <HiOutlineMail className="text-lg sm:text-xl text-purple-700 mt-1 flex-shrink-0" />
                   <div className="min-w-0 flex-1">
                     <p className="font-medium text-sm sm:text-base text-gray-900">Email</p>
-                    <p className="text-xs sm:text-sm text-gray-700 break-all">support@codelibrary.com</p>
+                    <a
+                      href="mailto:admin@code-library.net"
+                      className="text-xs sm:text-sm text-gray-700 break-all hover:underline"
+                    >
+                      admin@code-library.net
+                    </a>
                   </div>
                 </div>
 
@@ -94,7 +97,12 @@ const Contact = () => {
                   <HiOutlinePhone className="text-lg sm:text-xl text-purple-700 mt-1 flex-shrink-0" />
                   <div className="min-w-0 flex-1">
                     <p className="font-medium text-sm sm:text-base text-gray-900">Phone</p>
-                    <p className="text-xs sm:text-sm text-gray-700">+91 987654321</p>
+                    <a
+                      href="tel:+918660184479"
+                      className="text-xs sm:text-sm text-gray-700 hover:underline"
+                    >
+                      +91 8660184479
+                    </a>
                   </div>
                 </div>
 
@@ -112,7 +120,7 @@ const Contact = () => {
                   <HiOutlineLocationMarker className="text-lg sm:text-xl text-purple-700 mt-1 flex-shrink-0" />
                   <div className="min-w-0 flex-1">
                     <p className="font-medium text-sm sm:text-base text-gray-900">Address</p>
-                    <p className="text-xs sm:text-sm text-gray-700">Lorem ipsum dolor sit amet consectetur.</p>
+                    <p className="text-xs sm:text-sm text-gray-700">652, 22nd Cross, 23rd Main Rd, Parangi Palaya, Sector 2, HSR Layout, Bengaluru, Karnataka - 560102</p>
                   </div>
                 </div>
               </div>
@@ -141,12 +149,10 @@ const Contact = () => {
                   </a>
                 </div>
               </div>
-            </div>
           </div>
 
-          {/* Contact Form Section */}
-          <div className="order-1 lg:order-2">
-            <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200 shadow-sm h-full">
+          {/* Contact Form Section */}          
+            <div className="col-span-3 bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200 shadow-sm h-full">
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                 Send us a Message
               </h3>
@@ -248,7 +254,6 @@ const Contact = () => {
                   </button>
                 </div>
               </form>
-            </div>
           </div>
         </div>
 
@@ -280,6 +285,7 @@ const Contact = () => {
       
       <TandC />
     </div>
+    </section>
   );
 };
 

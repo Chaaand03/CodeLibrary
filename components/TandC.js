@@ -18,7 +18,7 @@ const TandC = () => {
 
   const faqs = [
     {
-      title: "REFUND POLICY",
+      title: "Refund Policy",
       content: `1. Eligibility for Refunds:
       - Parents can request a refund only after commencing the regular classes and within 60 days from the date of enrollment.
       - Refund requests made after 60 days from the date of enrollment will not be considered.
@@ -32,7 +32,7 @@ const TandC = () => {
       - A service fee of $99 will be deducted from the refund amount if a cash refund is requested.`,
     },
     {
-      title: "CANCELLATION POLICY",
+      title: "Cancellation Policy",
       content: `1. Class Cancellations by Students:
       - Students can cancel or reschedule a maximum of 6 sessions per 48 sessions.
       - Cancellations or rescheduling must be done at least 24 hours prior to the scheduled class time.
@@ -43,7 +43,7 @@ const TandC = () => {
       - "No Show" sessions will be marked as completed and will not be eligible for rescheduling or compensation.`,
     },
     {
-      title: "PRIVACY POLICY",
+      title: "Privacy Policy",
       content: `1. Information Collection:
       - We collect personal information including but not limited to names, contact details, payment information, and usage data to provide and improve our services.
   
@@ -92,7 +92,7 @@ const TandC = () => {
       </Head>
 
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-center text-4xl font-bold mt-16 mb-8 text-blue-800">
+        <h1 className="text-center text-4xl font-bold mt-16 mb-8 text-[#301934]">
           Terms and Conditions
         </h1>
 
@@ -102,26 +102,25 @@ const TandC = () => {
             <div
               key={index}
               ref={(el) => (faqRefs.current[index] = el)}
-              className="border-b border-gray-200 fade-up"
+              className="bg-white border-gray-200 fade-up"
             >
               <button
-                className="flex items-center justify-between w-full py-4 text-black text-left text-lg font-medium hover:bg-gray-100 hover:text-black transition-colors duration-200 px-4 rounded-t-lg"
+                className="flex items-center justify-between w-full py-4 text-black text-left text-lg font-medium hover:bg-purple-100 hover:text-black transition-colors duration-200 px-4 rounded-t-lg"
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-content-${index}`}
               >
                 <div className="flex items-center space-x-3">
-                  <span className="w-3 h-3 bg-teal-500 rounded-full flex-shrink-0"></span>
                   <span>{section.title}</span>
                 </div>
-                <span className="text-teal-500 text-xl">
+                <span className="text-purple-500 text-xl">
                   {openIndex === index ? "▲" : "▼"}
                 </span>
               </button>
               {openIndex === index && (
                 <div 
                   id={`faq-content-${index}`}
-                  className="text-gray-600 text-sm p-4 bg-gray-50 rounded-b-lg whitespace-pre-line"
+                  className="text-purple-800 text-sm p-4 bg-gray-50 rounded-b-lg whitespace-pre-line"
                 >
                   {section.content}
                 </div>
@@ -133,7 +132,7 @@ const TandC = () => {
         {/* Agreement Button */}
         <div className="flex justify-center mt-8 mb-8">
           <button
-            className="bg-teal-500 text-white px-8 py-3 rounded-lg hover:bg-teal-600 transition-colors duration-300 font-semibold"
+            className="bg-purple-800 text-white px-8 py-3 rounded-lg hover:bg-teal-600 transition-colors duration-300 font-semibold"
             onClick={() => setShowRegister(true)}
           >
             I AGREE
@@ -157,7 +156,7 @@ const TandC = () => {
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          background: rgba(255, 255, 255, 0.9);
+          background: #F0F4F8;
           border-radius: 50%;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
           transition: all 0.3s ease;

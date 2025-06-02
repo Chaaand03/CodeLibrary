@@ -27,12 +27,12 @@ const Navbar = () => {
               <Image src="/Image/Codelibraylogo.png" alt="Logo" width={70} height={70} />
             </Link>
             <div className="hidden md:flex space-x-6 ml-4">
-              <Link href="/" className="text-black hover:font-bold">Home</Link>
-              <Link href="/Courses" className="text-black hover:font-bold">Courses</Link>
-              <Link href="/priceing" className="text-black hover:font-bold">Pricing</Link>
-              <Link href="/about" className="text-black hover:font-bold">About Us</Link>
-              <Link href="/ContactUs" className="text-black hover:font-bold">Contact Us</Link>
-              <Link href="/blog" className="text-black hover:font-bold">Blog</Link>
+              <Link href="/" className="text-purple-800 hover:font-bold">Home</Link>
+              <Link href="/Courses" className="text-purple-800 hover:font-bold">Courses</Link>
+              <Link href="/priceing" className="text-purple-800 hover:font-bold">Pricing</Link>
+              <Link href="/about" className="text-purple-800 hover:font-bold">About Us</Link>
+              <Link href="/ContactUs" className="text-purple-800 hover:font-bold">Contact Us</Link>
+              <Link href="/blog" className="text-purple-800 hover:font-bold">Blog</Link>
             </div>
           </div>
 
