@@ -1,0 +1,96 @@
+// "use client";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+import math from "../public/Courses/math.png";
+import python from "../public/Courses/python.png";
+import web from "../public/Courses/web.png";
+import scratch  from "../public/Courses/scratch.png";
+
+const courses = [
+  {
+    name: "",
+    detail: "Math",
+    img: math,
+    fileLink: "https://drive.google.com/file/d/1AmnliWJZYACIuVim_sVcrgU_agGfFKIM/view?usp=sharing",
+  },
+  {
+    name: "",
+    detail: "Python",
+    img: python,
+    fileLink: "https://drive.google.com/file/d/1LE0oUrlRee54DL7NjWwRDmduXU_xGeq9/view?usp=sharing",
+  },
+  {
+    name: "",
+    detail: "Web Dev",
+    img: web,
+    fileLink: "https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view?usp=sharing",
+  },
+  {
+    name: "",
+    detail: "Scratch",
+    img: scratch ,
+    fileLink: "https://drive.google.com/file/d/1JQblPVA71zWzFqA1ydh7ddM_fyrnoWJM/view?usp=sharing",
+  },
+];
+
+const fadeUpAnimation = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const CourseMenu = () => {
+  return (
+    <section className="py-12 px-4 md:px-10 bg-[#E6E6FA] text-center">
+      {/* <span className="text-green-500 text-lg font-semibold block mb-2">Offerings</span> */}
+      <h2 className="text-3xl font-bold text-gray-800 mb-10">Discover Our Courses</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+        {courses.map((course, index) => (
+          <motion.div
+            key={index}
+            className="bg-[#D8BFD8] rounded-lg shadow-md text-center w-72 sm:w-80  hover:shadow-lg transition-all duration-300"
+            variants={fadeUpAnimation}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <Image
+              src={course.img}
+              alt={course.name}
+              className="rounded-md w-full h-44 object-cover"
+              width={300}
+              height={200}
+            />
+
+            <div className="mt-4">
+              {/* <p className="text-xs font-bold text-white bg-purple-600 inline-block px-3 py-1 rounded-full mb-2">
+                {course.name}
+              </p> */}
+              <h3 className="text-md font-semibold text-gray-800 mb-4">{course.detail}</h3>
+
+              <Link
+                href={course.fileLink}
+                target="_blank"
+                className="inline-block border border-purple-700 text-purple-700 mb-2 px-4 py-2 rounded-md text-sm font-semibold hover:bg-purple-100 transition"
+              >
+                Know More
+              </Link>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="mt-10">
+        <Link href="/Courses">
+          <button className="border border-purple-600 text-purple-600 px-6 py-3 rounded-md font-semibold hover:bg-purple-100 transition">
+            More Courses
+          </button>
+        </Link>
+      </div>
+    </section>
+  );
+};
+
+export default CourseMenu;
