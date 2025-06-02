@@ -125,7 +125,7 @@ export default function Home() {
         <h2 className="text-2xl text-black sm:text-3xl font-bold">Course Benefits</h2>
         <p className="text-gray-600 mt-2">Our amazing 3-step Process</p>
         
-        <div className="flex flex-wrap justify-center gap-8 mt-8">
+        <div className="flex flex-wrap justify-center gap-16 mt-8">
           <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80">
             <div className="flex text-black justify-center items-center text-4xl transition-colors">
               <FaRocket />
@@ -156,7 +156,7 @@ export default function Home() {
       <section id="benefits-section" className="bg-[#E6E6FA] px-4 sm:px-8 py-12 max-w-full mx-auto text-center">
         <h2 className="text-2xl text-black sm:text-3xl font-bold">Course Structure</h2>
 
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
+        <div className="flex flex-wrap justify-center gap-16 mt-8">
           <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
               <GiBrain />

@@ -24,7 +24,8 @@ const Navbar = () => {
           {/* Left - Logo & Links */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <Image src="/Image/Codelibraylogo.png" alt="Logo" width={70} height={70} />
+              <Image src="/Image/Codelibraylogo.png" alt="Logo" width={50} height={50} />
+              Code Library
             </Link>
             <div className="hidden md:flex space-x-6 ml-4">
               <Link href="/" className="text-purple-800 hover:font-bold">Home</Link>

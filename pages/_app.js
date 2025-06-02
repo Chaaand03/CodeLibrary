@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
   return (
     <TutorBirdProvider>
       <Head>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/Image/Codelibraylogo.png" />
         <title>CODE.LIBRARY</title>
       </Head>
         <Navbar />

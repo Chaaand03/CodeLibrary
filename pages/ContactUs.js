@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { HiOutlineMail, HiOutlinePhone, HiOutlineClock, HiOutlineLocationMarker } from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
 import TandC from "../components/TandC"
 
 const Contact = () => {
@@ -68,10 +69,10 @@ const Contact = () => {
       
       <div className="max-w-7xl mx-auto">
         {/* Main Content Grid */}
-        <div className="grid grid-cols-5 gap-4 h-full">
+        <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 h-full">
 
           {/* Contact Information Section */}
-            <div className="col-span-2 bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200 h-full">
+            <div className="sm:col-span-2 bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200 h-full">
 
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                 Contact Information
@@ -105,6 +106,21 @@ const Contact = () => {
                     </a>
                   </div>
                 </div>
+
+              {/* <div className="flex items-start gap-3 sm:gap-4">
+                <FaWhatsapp className="text-lg sm:text-xl text-purple-700 mt-1 flex-shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <p className="font-medium text-sm sm:text-base text-gray-900">Phone</p>
+                  <a
+                    href="https://wa.me/918660184479?text=Hi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs sm:text-sm text-gray-700 hover:underline"
+                  >
+                    +91 8660184479
+                  </a>
+                </div>
+              </div> */}
 
                 {/* Hours */}
                 <div className="flex items-start gap-3 sm:gap-4">
@@ -152,7 +168,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form Section */}          
-            <div className="col-span-3 bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200 shadow-sm h-full">
+            <div className="sm:col-span-3 bg-white p-4 sm:p-6 lg:p-8 rounded-lg border border-gray-200 shadow-sm h-full">
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                 Send us a Message
               </h3>
