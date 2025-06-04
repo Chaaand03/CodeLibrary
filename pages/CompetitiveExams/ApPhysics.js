@@ -20,7 +20,7 @@ const CompetitiveExams = () => {
               <span className="inline-block bg-[#D8BFD8] text-[#4B0082] px-4 py-2 text-lg font-bold rounded-full mb-4">
                 GRADE - 10+
               </span>
-              <h2 className="text-2xl font-bold text-gray-900">SAT Exam</h2>
+              <h2 className="text-2xl font-bold text-gray-900">AP Physics Exam</h2>
             </div>
 
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 shadow-sm hover:shadow-md transition-shadow duration-300">

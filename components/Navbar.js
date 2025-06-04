@@ -25,9 +25,9 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image src="/Image/Codelibraylogo.png" alt="Logo" width={50} height={50} />
-              Code Library
+              <span className="text-[#301934] font-bold text-xl italic">Code Library</span>
             </Link>
-            <div className="hidden md:flex space-x-6 ml-4">
+            <div className="hidden md:flex space-x-6 ml-12">
               <Link href="/" className="text-purple-800 hover:font-bold">Home</Link>
               <Link href="/Courses" className="text-purple-800 hover:font-bold">Courses</Link>
               <Link href="/priceing" className="text-purple-800 hover:font-bold">Pricing</Link>

@@ -69,7 +69,7 @@ const pdfLinksData = {
     'AMC8':'/CompetitiveExams/AMC8',
     'AMC10':'/CompetitiveExams/AMC10',
     'AMC12':'/CompetitiveExams/AMC12',
-    'ACT':'/CompetitiveExams/Act',
+    'ACT':'/CompetitiveExams/ACT',
     'AP Physics':'/CompetitiveExams/ApPhysics',
 
   },

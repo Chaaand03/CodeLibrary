@@ -171,6 +171,7 @@ const Register = ({ isOpen, onClose }) => {
                   <option value="Mathematics">Mathematics</option>
                   <option value="Python">Python</option>
                   <option value="Web Development">Web Development</option>
+                  <option value="Scratch">Scratch</option>
                 </select>
 
                 <select

@@ -43,11 +43,21 @@ const Footer = () => {
           <ul className="space-y-3 text-sm">
             <li className="flex items-start space-x-2">
               <MdEmail className="text-purple-800 mt-1" />
-              <span>admin@code-library.net</span>
+              <a
+                href="mailto:admin@code-library.net"
+                className="text-sm sm:text-base text-gray-700 hover:underline"
+              >
+                admin@code-library.net
+              </a>
             </li>
             <li className="flex items-start space-x-2">
               <MdPhone className="text-purple-800 mt-1" />
-              <span>+91 8660184479</span>
+              <a
+                href="tel:+918660184479"
+                className="text-sm sm:text-base text-gray-700 hover:underline"
+              >
+                +91 8660184479
+              </a>
             </li>
             <li className="flex items-start space-x-2">
               <MdLocationOn className="text-purple-800 mt-1" />
