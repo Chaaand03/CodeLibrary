@@ -155,10 +155,10 @@ Thinking
             
 
             {/* Card 2 */}
-             <div className="">
-              <h4 className="font-bold text-black text-lg mb-3">Small Group Sessions</h4>
-              <p className="text-gray-700 text-sm font-semibold">Small class sizes ensure personalized attention and active participation from all students.</p>
-              </div>
+            <div className="">
+              <h4 className="font-bold text-black text-lg mb-3"> 1:1 Interactive Sessions</h4>
+              <p className="text-gray-700 text-sm font-semibold">One-on-one sessions ensure focused attention, immediate feedback, and a customized learning experience tailored to each student’s needs.</p>
+            </div>
 
             {/* Card 3 */}
               <div className="">

@@ -1,28 +1,35 @@
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: 'Method Not Allowed' });
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { parentName, email, phoneNumber, studentName, interestedCourse, studentGrade } = req.body;
-  const sheetPayload = { parentName, email, phoneNumber, studentName, interestedCourse, studentGrade };
-
   try {
-    const gsResponse = await fetch(
-      'https://script.google.com/macros/s/AKfycbzngsrSHXQxLcLxY-AtNtgKr4iU2LRav2AJWl0m4rmAxzEx7zk2Du3lJsHiuX33qlYc_Q/exec',
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(sheetPayload)
-      }
-    );
-    if (!gsResponse.ok) {
-      console.error(await gsResponse.text());
-      return res.status(500).json({ error: 'Failed to submit to Google Sheets' });
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbwOU8E67JAHCijwGSP1ePsBNR5Qg2dTw9A4m6ZtsAdNQfjvOLZdlirH-rZo4A-VMtDLYQ/exec";
+
+    const response = await fetch(scriptUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        parentName: req.body.parentName,
+        email: req.body.email,
+        phoneNumber: req.body.phoneNumber,
+        studentName: req.body.studentName,
+        interestedCourse: req.body.interestedCourse,
+        studentGrade: req.body.studentGrade
+      }),
+    });
+
+    const text = await response.text();
+
+    if (response.ok && text.includes("Success")) {
+      return res.status(200).json({ success: true });
+    } else {
+      return res.status(500).json({ error: "Google Script Error", details: text });
     }
-    return res.status(200).json({ message: 'Enquiry submitted successfully.' });
   } catch (err) {
-    console.error('Error in API route:', err);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error("Server error:", err);
+    return res.status(500).json({ error: "Server error", message: err.message });
   }
 }

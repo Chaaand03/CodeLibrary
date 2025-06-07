@@ -64,12 +64,12 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-stretch max-w-screen-xl mx-auto">
           {/* Left Section */}
           <div className="w-full md:w-1/2 flex flex-col justify-center px-4 sm:px-8 py-8 md:py-16">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#301934] leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-[#301934] leading-tight">
               Learn to Code & <br />
               <span>Love Math</span>
             </h1>
             
-            <h3 className="mt-4 text-[#301934] text-2xl font-semibold">The Fun Way!</h3>
+            <h3 className="mt-4 text-[#6F5D71] text-2xl font-semibold sm:text-4xl">Curiosity in, boredom out.</h3>
 
             <p className="mt-4 text-[#301934] text-base sm:text-lg md:text-xl leading-relaxed">
               Interactive live classes that make learning exciting for kids! <br></br>
@@ -122,29 +122,29 @@ export default function Home() {
 
       {/* Course Benefits Section */}
       <section className="px-4 sm:px-8 py-12 max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl text-black sm:text-3xl font-bold">Course Benefits</h2>
+        <h2 className="text-2xl text-[#301934] sm:text-3xl font-bold">Course Benefits</h2>
         <p className="text-gray-600 mt-2">Our amazing 3-step Process</p>
         
-        <div className="flex flex-wrap justify-center gap-16 mt-8">
-          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80">
+        <div className="flex flex-wrap justify-center gap-12 mt-8 sm:gap-16">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
             <div className="flex text-black justify-center items-center text-4xl transition-colors">
-              <FaRocket />
+              {/* <FaRocket /> */}
             </div>
             <h3 className="text-lg text-black font-semibold">30 Sessions to Master Fundamentals</h3>
             <p className="font-thin text-black mt-2">Progress at Your Own Pace – No Rush, No Pressure.</p>
           </div>
           
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
-              <FaGraduationCap />
+              {/* <FaGraduationCap /> */}
             </div>
             <h3 className="text-lg text-black font-semibold">1:1 Expert Tutors</h3>
             <p className="font-thin text-black mt-2">Interactive Learning – "No Boring Lectures."</p>
           </div>
           
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
-              <IoMdClock />
+              {/* <IoMdClock /> */}
             </div>
             <h3 className="text-lg text-black font-semibold">Free Demo: Solve a Real Problem in 30 Minutes</h3>
             <p className="font-thin text-black mt-2">Enroll in 2 Clicks Post-Trial –No Obligation.</p>
@@ -154,7 +154,7 @@ export default function Home() {
 
       {/* Course Structure Section */}
       <section id="benefits-section" className="bg-[#E6E6FA] px-4 sm:px-8 py-12 max-w-full mx-auto text-center">
-        <h2 className="text-2xl text-black sm:text-3xl font-bold">Course Structure</h2>
+        <h2 className="text-2xl text-[#301934] sm:text-3xl font-bold">Course Structure</h2>
 
         <div className="flex flex-wrap justify-center gap-16 mt-8">
           <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80">
@@ -180,7 +180,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Offering Section */}
+      {/* Competitive Exams Section */}
       <Offering />
 
       {/* Our Courses Section */}

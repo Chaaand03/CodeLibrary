@@ -12,9 +12,9 @@ const Register = ({ isOpen, onClose }) => {
     studentName: "",
     interestedCourse: "",
     studentGrade: "",
-    preferredDate: "",
-    timezone: "",
-    timeSlot: ""
+    // preferredDate: "",
+    // timezone: "",
+    // timeSlot: ""
   });
 
   const [loading, setLoading] = useState(false);
@@ -33,11 +33,11 @@ const Register = ({ isOpen, onClose }) => {
     setMessage("");
 
     try {
-      const response = await fetch("https://formspree.io/f/xkndpvak", {
+      const response = await fetch("/api/submit-enquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Accept: "application/json",
+          // Accept: "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -51,9 +51,9 @@ const Register = ({ isOpen, onClose }) => {
           studentName: "",
           interestedCourse: "",
           studentGrade: "",
-          preferredDate: "",
-          timezone: "",
-          timeSlot: ""
+          // preferredDate: "",
+          // timezone: "",
+          // timeSlot: ""
         });
         onClose();
 

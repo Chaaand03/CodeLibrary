@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import EnquiryForm from './EnquiryForm';
 import Register from './Register';
+import ViewDetailedCurrForm from './ViewDetailedCurrForm'; 
 
 // Tabs
 const classTabs = ['Class K-2', 'Class 3-5', 'Class 6-8', 'Class 9-12', 'Competitive Exams', 'Coding'];
@@ -86,6 +87,7 @@ export default function Curriculum({ selectedTab }) {
   const [selectedClassTab, setSelectedClassTab] = useState(selectedTab);
   const [selectedGrade, setSelectedGrade] = useState('Grade KG');
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [detailedTopic, setDetailedTopic] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const curriculumRef = useRef(null);
 
@@ -109,18 +111,37 @@ export default function Curriculum({ selectedTab }) {
   const topics = topicsData[selectedClassTab]?.[selectedGrade] || [];
 
   // Handle view curriculum button click
+  // const handleViewCurriculum = () => {
+  //   const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade];
+  //   if (pdfLink) {
+  //     window.open(pdfLink, '_blank');
+  //   }
+  // };
+
   const handleViewCurriculum = () => {
-    const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade];
-    if (pdfLink) {
-      window.open(pdfLink, '_blank');
-    }
+    const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade] || '';
+    setDetailedTopic({
+      title: selectedClassTab,
+      grade: selectedGrade,
+      pdfLink,
+    });
   };
+
+  const handleViewCourse = (courseName) => {
+    const link = pdfLinksData[selectedClassTab]?.[courseName];
+    if (!link) return console.warn("No PDF for", courseName);
+    setDetailedTopic({
+      title: courseName,
+      pdfLink: link,
+    });
+  };
+  
 
   // Handle register modal
   const openRegister = () => setIsRegisterOpen(true);
   const closeRegister = () => setIsRegisterOpen(false);
- const renderContent = () => {
-
+ 
+  const renderContent = () => {
   if (['Competitive Exams', 'Coding'].includes(selectedClassTab)) {
     const items = topicsData[selectedClassTab];
     const links = pdfLinksData[selectedClassTab];
@@ -132,7 +153,7 @@ export default function Curriculum({ selectedTab }) {
             {items.map((item, idx) => (
               <a
                 key={idx}
-                href={links[item]}
+                onClick={() => handleViewCourse(item)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 border border-purple-700 rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 transition w-max lg:w-1/4"
@@ -141,6 +162,12 @@ export default function Curriculum({ selectedTab }) {
               </a>
             ))}
           </div>
+          {detailedTopic && (
+            <ViewDetailedCurrForm
+              topic={detailedTopic}
+              onClose={() => setDetailedTopic(null)}
+            />
+          )}
         </div>
 
         {/* Enquiry Form */}
@@ -150,6 +177,7 @@ export default function Curriculum({ selectedTab }) {
       </div>
     );
   }
+  
 
     // Return regular content for other classes
     return (
@@ -195,6 +223,12 @@ export default function Curriculum({ selectedTab }) {
                 View Detailed Curriculum
               </button>
             </div>
+            {detailedTopic && (
+              <ViewDetailedCurrForm
+                topic={detailedTopic}
+                onClose={() => setDetailedTopic(null)}
+              />
+            )}
           </div>
 
           {/* Right: Enquiry Form */}
