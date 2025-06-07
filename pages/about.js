@@ -95,7 +95,7 @@ export default function AboutSection() {
 
                 {/* Mission Section */}
                 <section className="bg-white py-16 px-4 md:px-10 text-center">
-                    <h2 className="text-2xl font-bold text-[#301934] mb-10">Our Mission</h2>
+                    <h2 className="text-3xl font-bold text-[#301934] mb-10">Our Mission</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-left">
                         {[
                             {
@@ -117,7 +117,7 @@ export default function AboutSection() {
                         ].map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-pink-100 rounded-xl p-6 shadow-sm hover:shadow-md transition"
+                                className="bg-[#EFE3EF] rounded-xl p-6 shadow-sm hover:shadow-md transition"
                             >
                                 <h3 className="font-bold text-md text-[#301934] mb-2">{item.title}</h3>
                                 <p className="text-sm text-gray-700">{item.desc}</p>
@@ -128,7 +128,7 @@ export default function AboutSection() {
 
                 {/* Impact Section */}
                 <section className="py-16 px-4 text-center">
-                    <h2 className="text-2xl font-bold text-[#301934] mb-10">Our Impact</h2>
+                    <h2 className="text-3xl font-bold text-[#301934] mb-10">Our Impact</h2>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-5xl mx-auto">
                         {[
                             { number: "12,000+", label: "Programs Attended" },
@@ -148,11 +148,10 @@ export default function AboutSection() {
                 </section>
 
                 {/* Meet Our Team */}
-                <section className="bg-white py-16  text-center">
-                    <h2 className="text-2xl font-bold text-[#301934] mb-5">Meet Our Team</h2>
-                    <div className="bg-[#EDE9FE] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 p-5 py-20  ">
+                <section className="bg-white py-16 text-center">
+                    <h2 className="text-3xl font-bold text-[#301934] mb-5">Meet Our Team</h2>
+                    <div className="bg-[#EDE9FE] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5 mx-auto py-20 justify-items-center ">
                         {[
-                            { name: "Aditya Raj", title: "Academic Counselor", image: "/Image/Aditya.png" },
                             { name: "Bhawana Thakare", title: "Academic Counselor", image: "/Image/Bhawana.png" },
                             { name: "Kavya Vihan", title: "Academic Counselor", image: "/Image/Kavaya.png" },
                         ].map((member, index) => (
@@ -162,8 +161,8 @@ export default function AboutSection() {
                                     alt={member.name}
                                     className="w-28 h-28 object-cover rounded-full mb-3"
                                 />
-                                <p className="text-sm font-semibold text-gray-800">{member.title}</p>
-                                <p className="text-sm text-purple-700">{member.name}</p>
+                                <p className="font-bold text-gray-800 text-lg sm:text-xl">{member.title}</p>
+                                <p className="text-[#301934]">{member.name}</p>
                             </div>
                         ))}
                     </div>
@@ -171,15 +170,15 @@ export default function AboutSection() {
 
                 {/* Meet Our Tutors */}
                 <section className="bg-white   text-center">
-                    <h2 className=" text-2xl font-bold text-[#301934] mb-10">Meet Our Tutors</h2>
-                    <div className="bg-[#EDE9FE] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 p-5 mx-auto">
+                    <h2 className=" text-3xl font-bold text-[#301934] mb-10">Meet Our Tutors</h2>
+                    <div className="bg-[#EDE9FE] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 p-5 mx-auto py-20">
                         {[
-                            { name: "Vidhi Kanoria", title: "Scratch Tutor at Code.LIBRARY", image: "/Image/Vidhi.png" },
-                            { name: "Janani", title: "Scratch Tutor at Code.LIBRARY", image: "/Image/Janani.png" },
-                            { name: "Keshav Bajpai", title: "Math Tutor at Code.LIBRARY", image: "/Image/Kashav.png" },
-                            { name: "Mayukh Jana", title: "Math Tutor at Code.LIBRARY", image: "/Image/jana.png" },
-                            { name: "Umangi", title: "Scratch Mentor at Code.LIBRARY", image: "/Image/Umangi.png" },
-                            { name: "Sanya Batra", title: "Math Tutor at Code.LIBRARY", image: "/Image/Sayana.png" },
+                            { name: "Vidhi Kanoria", title: "Scratch Tutor", image: "/Image/Vidhi.png" },
+                            { name: "Janani", title: "Scratch Tutor", image: "/Image/Janani.png" },
+                            { name: "Keshav Bajpai", title: "Math Tutor", image: "/Image/Kashav.png" },
+                            { name: "Mayukh Jana", title: "Math Tutor", image: "/Image/jana.png" },
+                            { name: "Umangi", title: "Scratch Mentor", image: "/Image/Umangi.png" },
+                            { name: "Sanya Batra", title: "Math Tutor", image: "/Image/Sayana.png" },
                         ].map((tutor, index) => (
                             <div key={index} className="flex flex-col items-center">
                                 <img
@@ -187,8 +186,8 @@ export default function AboutSection() {
                                     alt={tutor.name}
                                     className="w-28 h-28 object-cover rounded-full mb-3"
                                 />
-                                <p className="text-sm font-semibold text-gray-800 text-center">{tutor.title}</p>
-                                <p className="text-sm text-purple-700">{tutor.name}</p>
+                                <p className="font-bold text-gray-800 text-center text-lg sm:text-xl">{tutor.title}</p>
+                                <p className="text-[#301934]">{tutor.name}</p>
                             </div>
                         ))}
                     </div>

@@ -26,7 +26,7 @@ const curriculumSteps = [
   },
 ];
 
-const curriculumTabs = ['Class K-2', 'Class 3-5', 'Class 6-8', 'Class 9-12', 'Competitive Exams'];
+const curriculumTabs = ['Class K-2', 'Class 3-5', 'Class 6-8', 'Class 9-12', 'Competitive Exams', 'Coding'];
 
 export default function CurriculumSection() {
   const [selectedClass, setSelectedClass] = useState('Class K-2');

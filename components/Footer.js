@@ -69,7 +69,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="border-t border-purple-300 text-center text-sm text-gray-700 py-4">
-        © 2024 Code Library. All rights reserved.
+        © 2025 Code Library. All rights reserved.
       </div>
     </footer>
   );

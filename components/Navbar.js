@@ -57,23 +57,61 @@ const Navbar = () => {
 
         {/* Mobile Menu Dropdown */}
         {isOpen && (
-          <div className="md:hidden px-4 pb-6 bg-white shadow-md">
-            <Link href="/" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Home</Link>
-            <Link href="/Courses" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Courses</Link>
-            <Link href="/priceing" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Pricing</Link>
-            <Link href="/about" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>About Us</Link>
-            <Link href="/ContactUs" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Contact Us</Link>
-            <Link href="/blog" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Blog</Link>
+          <div className="md:hidden fixed inset-0 z-40">
+          {/* Light overlay */}
+          <div
+            className="absolute inset-0 bg-black bg-opacity-50"
+            onClick={closeMobileMenu}
+          />
+
+          {/* Dropdown panel */}
+          <div
+            className="absolute top-16 left-0 right-0 bg-white shadow-md px-4 pb-6 z-50"
+            onClick={e => e.stopPropagation()}
+          >
+            <Link href="/" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
+              Home
+            </Link>
+            <Link href="/Courses" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
+              Courses
+            </Link>
+            <Link href="/priceing" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
+              Pricing
+            </Link>
+            <Link href="/about" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
+              About Us
+            </Link>
+            <Link href="/ContactUs" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
+              Contact Us
+            </Link>
+            <Link href="/blog" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
+              Blog
+            </Link>
             <button
-              onClick={() => {
-                openRegister();
-                closeMobileMenu();
-              }}
+              onClick={() => { openRegister(); closeMobileMenu(); }}
               className="w-full bg-purple-800 text-white font-semibold px-4 py-2 rounded-md mt-4 hover:bg-purple-900 transition"
             >
               Sign Up
             </button>
           </div>
+        </div>
+          // <div className="md:hidden px-4 pb-6 bg-white shadow-md">
+          //   <Link href="/" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Home</Link>
+          //   <Link href="/Courses" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Courses</Link>
+          //   <Link href="/priceing" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Pricing</Link>
+          //   <Link href="/about" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>About Us</Link>
+          //   <Link href="/ContactUs" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Contact Us</Link>
+          //   <Link href="/blog" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Blog</Link>
+          //   <button
+          //     onClick={() => {
+          //       openRegister();
+          //       closeMobileMenu();
+          //     }}
+          //     className="w-full bg-purple-800 text-white font-semibold px-4 py-2 rounded-md mt-4 hover:bg-purple-900 transition"
+          //   >
+          //     Sign Up
+          //   </button>
+          // </div>
         )}
       </nav>
 

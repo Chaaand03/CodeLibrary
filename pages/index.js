@@ -72,8 +72,8 @@ export default function Home() {
             <h3 className="mt-4 text-[#301934] text-2xl font-semibold">The Fun Way!</h3>
 
             <p className="mt-4 text-[#301934] text-base sm:text-lg md:text-xl leading-relaxed">
-              Interactive live classes that make learning exciting for kids! Join
-              our adventure into the world of coding and mathematics.
+              Interactive live classes that make learning exciting for kids! <br></br>
+              Join our adventure into the world of coding and mathematics.
             </p>
 
             <div className="mt-8">

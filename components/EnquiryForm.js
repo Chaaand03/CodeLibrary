@@ -142,7 +142,7 @@ const EnquiryForm = () => {
         </select>
 
         {/* Schedule Preference */}
-        <h3 className="text-sm font-semibold text-gray-800 mt-4">Schedule Preference</h3>
+        {/* <h3 className="text-sm font-semibold text-gray-800 mt-4">Schedule Preference</h3>
         <input
           type="date"
           name="preferredDate"
@@ -185,7 +185,7 @@ const EnquiryForm = () => {
           ].map((slot) => (
             <option key={slot} value={slot}>{slot}</option>
           ))}
-        </select>
+        </select> */}
 
         {message && <p className={`text-sm ${message.includes("Error") ? "text-red-500" : "text-green-500"}`}>{message}</p>}
 

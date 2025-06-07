@@ -6,6 +6,7 @@ import { CartProvider } from '../context/CartContext';
 import { TutorBirdProvider } from '../context/TutorBirdContext';
 import SubscribeSection from '../components/SubscribeSection';
 import { useEffect } from 'react';
+import SignUpPopup from "@/components/SignUpPopup";
 
 export default function App({ Component, pageProps }) {
   // Clean up any modal containers on route changes
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }) {
         <Navbar />
       <CartProvider>
         <Component {...pageProps} />
+        <SignUpPopup />
         <SubscribeSection />
         <Footer />
       </CartProvider>

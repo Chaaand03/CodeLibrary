@@ -3,7 +3,7 @@ import EnquiryForm from './EnquiryForm';
 import Register from './Register';
 
 // Tabs
-const classTabs = ['Class K-2', 'Class 3-5', 'Class 6-8', 'Class 9-12', 'Competitive Exams'];
+const classTabs = ['Class K-2', 'Class 3-5', 'Class 6-8', 'Class 9-12', 'Competitive Exams', 'Coding'];
 
 // Dynamic curriculum tabs based on selected class
 const curriculumTabsData = {
@@ -11,7 +11,8 @@ const curriculumTabsData = {
   'Class 3-5': ['Grade 3', 'Grade 4', 'Grade 5'],
   'Class 6-8': ['Grade 6', 'Grade 7', 'Grade 8'],
   'Class 9-12': ['Grade 9', 'Grade 10', 'Grade 11', 'Grade 12'],
-  'Competitive Exams': []
+  'Competitive Exams': [],
+  'Coding': []
 };
 
 // Topics Data - Based on Class and Grade
@@ -37,7 +38,8 @@ const topicsData = {
     'Grade 11': ['Sets, Relations, and Functions', 'Numbers', 'Algebra', 'Sequences and Series', 'Coordinate Geometry', '3D Geometry', 'Calculus', 'Data'],
     'Grade 12': ['Relations and Functions', 'Differential Calculus', 'Integral Calculus', 'Coordinate Geometry', 'Vectors and Matrices', '3D Geometry', 'Probability'],
   },
-  'Competitive Exams': ['SAT','AMC6','AMC8','AMC10','AMC12','ACT','AP Physics']
+  'Competitive Exams': ['SAT','AMC6','AMC8','AMC10','AMC12','ACT','AP Physics'],
+  'Coding': ['Python', 'Web Development', 'Scratch']
 };
 
 // PDF Links Data - Based on Class and Grade
@@ -72,6 +74,11 @@ const pdfLinksData = {
     'ACT':'/CompetitiveExams/ACT',
     'AP Physics':'/CompetitiveExams/ApPhysics',
 
+  },
+  'Coding': {
+    'Python': 'https://drive.google.com/file/d/1LE0oUrlRee54DL7NjWwRDmduXU_xGeq9/view',
+    'Web Development': 'https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view',
+    'Scratch': 'https://drive.google.com/file/d/1JQblPVA71zWzFqA1ydh7ddM_fyrnoWJM/view',
   },
 };
 
@@ -113,39 +120,36 @@ export default function Curriculum({ selectedTab }) {
   const openRegister = () => setIsRegisterOpen(true);
   const closeRegister = () => setIsRegisterOpen(false);
  const renderContent = () => {
-    if (selectedClassTab === 'Competitive Exams') {
-      return (
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-          {/* Left: Competitive Exams List */}
-          <div className="flex-1 space-y-6 p-6 rounded-xl">
-            {topicsData['Competitive Exams'].map((exam, index) => (
-              <div
-                key={index}
-                onClick={() => window.open(pdfLinksData['Competitive Exams'][exam], '_blank')}
-                className="flex items-center gap-4 transition-all duration-500 ease-in-out transform hover:scale-102 hover:translate-x-2 cursor-pointer"
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  animation: isAnimating ? 'none' : `fadeInUp 0.6s ease-out ${index * 100}ms both`
-                }}
+
+  if (['Competitive Exams', 'Coding'].includes(selectedClassTab)) {
+    const items = topicsData[selectedClassTab];
+    const links = pdfLinksData[selectedClassTab];
+    return (
+      <div className="flex flex-col lg:flex-row gap-8 items-start">
+        {/* Topics Blocks */}
+        <div className="flex-1 p-6">
+          <div className="flex flex-row flex-wrap gap-4 lg:flex-col items-center lg:gap-4 overflow-x-auto">
+            {items.map((item, idx) => (
+              <a
+                key={idx}
+                href={links[item]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 border border-purple-700 rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 transition w-max lg:w-1/4"
               >
-                <div className="w-9 h-9 rounded-full border border-gray-300 bg-white flex items-center justify-center font-bold text-gray-900 shadow-sm transition-all duration-300 hover:shadow-md hover:bg-purple-50">
-                  {index + 1}
-                </div>
-                <h4 className="text-lg font-semibold text-gray-900 transition-colors duration-300 hover:text-purple-700">
-                  {exam}
-                </h4>
-              </div>
+                {item}
+              </a>
             ))}
           </div>
-
-          {/* Right: Enquiry Form - Keep as is */}
-          <div className="w-full md:w-4/5 lg:w-1/3 transition-all duration-500 transform hover:scale-102">
-            <EnquiryForm />
-          </div>
         </div>
-      );
-    }
 
+        {/* Enquiry Form */}
+        <div className="w-full md:w-4/5 lg:w-1/3 p-6">
+          <EnquiryForm />
+        </div>
+      </div>
+    );
+  }
     // Return regular content for other classes
     return (
       <>

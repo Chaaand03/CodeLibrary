@@ -193,7 +193,7 @@ const Register = ({ isOpen, onClose }) => {
             </div>
 
             {/* Schedule Preference */}
-            <div>
+            {/* <div>
               <h3 className="text-sm font-semibold text-gray-800 mb-3">Schedule Preference</h3>
               <div className="space-y-3">
                 <input
@@ -240,7 +240,7 @@ const Register = ({ isOpen, onClose }) => {
                   ))}
                 </select>
               </div>
-            </div>
+            </div> */}
 
             {message && (
               <div className={`p-3 rounded-md text-sm ${
