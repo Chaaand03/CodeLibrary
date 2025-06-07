@@ -150,6 +150,7 @@ export default function Curriculum({ selectedTab }) {
       </div>
     );
   }
+
     // Return regular content for other classes
     return (
       <>
@@ -209,7 +210,7 @@ export default function Curriculum({ selectedTab }) {
     <div ref={curriculumRef} data-curriculum className="py-10">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Class Tabs - Centered with same styling */}
-        <div className="flex justify-center gap-6 mb-10 overflow-x-auto">
+        <div className="flex flex-nowrap justify-start gap-6 mb-8 overflow-x-auto px-4 sm:px-6 lg:px-8">
           {classTabs.map((tab) => (
             <button
               key={tab}

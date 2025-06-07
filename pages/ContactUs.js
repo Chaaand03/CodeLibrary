@@ -9,6 +9,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
+    phone: "",
     subject: "",
     message: ""
   });
@@ -43,6 +44,7 @@ const Contact = () => {
         setFormData({
           fullName: "",
           email: "",
+          phone: "",
           subject: "",
           message: ""
         });
@@ -201,6 +203,22 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter your email address"
+                    required
+                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div>
+                  <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Enter your phone number"
                     required
                     className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
                   />

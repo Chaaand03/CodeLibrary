@@ -75,7 +75,7 @@ export default function CurriculumSection() {
     <div className="bg-white py-10">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         {/* Tab Buttons - Match styling with Curriculum.js */}
-        <div className="flex justify-center gap-6 mb-8 overflow-x-auto">
+        <div className="flex flex-nowrap justify-start gap-6 mb-8 overflow-x-auto px-4 sm:px-6 lg:px-8">
           {curriculumTabs.map((tab) => (
             <button
               key={tab}
