@@ -150,7 +150,7 @@ export default function AboutSection() {
                 {/* Meet Our Team */}
                 <section className="bg-white py-16 text-center">
                     <h2 className="text-3xl font-bold text-[#301934] mb-5">Meet Our Team</h2>
-                    <div className="bg-[#EDE9FE] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-5 mx-auto py-20 justify-items-center ">
+                    <div className="bg-[#EDE9FE] grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-5 mx-auto py-20 justify-items-center ">
                         {[
                             { name: "Bhawana Thakare", title: "Academic Counselor", image: "/Image/Bhawana.png" },
                             { name: "Kavya Vihan", title: "Academic Counselor", image: "/Image/Kavaya.png" },
@@ -171,7 +171,7 @@ export default function AboutSection() {
                 {/* Meet Our Tutors */}
                 <section className="bg-white   text-center">
                     <h2 className=" text-3xl font-bold text-[#301934] mb-10">Meet Our Tutors</h2>
-                    <div className="bg-[#EDE9FE] w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 p-5 mx-auto py-20">
+                    <div className="bg-[#EDE9FE] w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-10 p-5 mx-auto py-20">
                         {[
                             { name: "Vidhi Kanoria", title: "Scratch Tutor", image: "/Image/Vidhi.png" },
                             { name: "Janani", title: "Scratch Tutor", image: "/Image/Janani.png" },

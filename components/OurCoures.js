@@ -13,7 +13,7 @@ const courses = [
     name: "",
     detail: "Math",
     img: math,
-    fileLink: "https://drive.google.com/file/d/1AmnliWJZYACIuVim_sVcrgU_agGfFKIM/view?usp=sharing",
+    fileLink: "/Courses",
   },
   {
     name: "",
@@ -46,7 +46,7 @@ const CourseMenu = () => {
       {/* <span className="text-green-500 text-lg font-semibold block mb-2">Offerings</span> */}
       <h2 className="text-3xl font-bold text-gray-800 mb-10">Discover Our Courses</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
         {courses.map((course, index) => (
           <motion.div
             key={index}
@@ -65,10 +65,7 @@ const CourseMenu = () => {
             />
 
             <div className="mt-4">
-              {/* <p className="text-xs font-bold text-white bg-purple-600 inline-block px-3 py-1 rounded-full mb-2">
-                {course.name}
-              </p> */}
-              <h3 className="text-md font-semibold text-gray-800 mb-4">{course.detail}</h3>
+              {/* <h3 className="text-md font-semibold text-gray-800 mb-4">{course.detail}</h3> */}
 
               <Link
                 href={course.fileLink}

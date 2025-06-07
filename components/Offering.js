@@ -86,7 +86,7 @@ const CourseMenu = () => {
     <section className="py-12 px-4 md:px-10 bg-[#f8f8ff] text-center">
       <h2 className="text-3xl font-bold text-gray-800 mb-10">Competitive Exams</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
         {getCoursesToShow().map((course, index) => (
           <motion.div
             key={index}
