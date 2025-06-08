@@ -1,6 +1,28 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 
+const COUNTRY_CODES = [
+  { label: "🇺🇸 United States (+1)",     value: "+1"  },
+  { label: "🇨🇦 Canada (+1)",            value: "+1"  },
+  { label: "🇬🇧 United Kingdom (+44)",   value: "+44" },
+  { label: "🇮🇳 India (+91)",            value: "+91" },
+  { label: "🇦🇺 Australia (+61)",       value: "+61" },
+  { label: "🇩🇪 Germany (+49)",          value: "+49" },
+  { label: "🇫🇷 France (+33)",           value: "+33" },
+  { label: "🇪🇸 Spain (+34)",            value: "+34" },
+  { label: "🇮🇹 Italy (+39)",            value: "+39" },
+  { label: "🇧🇷 Brazil (+55)",           value: "+55" },
+  { label: "🇲🇽 Mexico (+52)",           value: "+52" },
+  { label: "🇷🇺 Russia (+7)",            value: "+7"  },
+  { label: "🇨🇳 China (+86)",            value: "+86" },
+  { label: "🇯🇵 Japan (+81)",            value: "+81" },
+  { label: "🇰🇷 South Korea (+82)",      value: "+82" },
+  { label: "🇿🇦 South Africa (+27)",     value: "+27" },
+  { label: "🇳🇱 Netherlands (+31)",      value: "+31" },
+  { label: "🇸🇪 Sweden (+46)",           value: "+46" },
+  { label: "🇳🇿 New Zealand (+64)",      value: "+64" },
+];
+
 const Register = ({ isOpen, onClose }) => {
   const router = useRouter();
   const modalRef = useRef(null);
@@ -8,38 +30,57 @@ const Register = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     parentName: "",
     email: "",
+    countryCode: "+1",
     phoneNumber: "",
     studentName: "",
     interestedCourse: "",
     studentGrade: "",
-    // preferredDate: "",
-    // timezone: "",
-    // timeSlot: ""
   });
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+
+    if (name === "phoneNumber") {
+      const digitsOnly = value.replace(/\D/g, "");
+      setFormData((f) => ({ ...f, phoneNumber: digitsOnly }));
+    } else {
+      setFormData((f) => ({ ...f, [name]: value }));
+    }
   };
+
+  const handlePhoneBlur = () => {
+    if (formData.phoneNumber.length !== 10) {
+      setMessage("Phone number must be exactly 10 digits.");
+    } else {
+      setMessage("");
+    }
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.phoneNumber.length !== 10) {
+      setMessage("Phone number must be exactly 10 digits.");
+      return;
+    }
     setLoading(true);
     setMessage("");
+
+    const payload = {
+      ...formData,
+      phoneNumber: `${formData.countryCode}${formData.phoneNumber}`,
+    };
 
     try {
       const response = await fetch("/api/submit-enquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Accept: "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
@@ -47,19 +88,17 @@ const Register = ({ isOpen, onClose }) => {
         setFormData({
           parentName: "",
           email: "",
+          countryCode: "+1",
           phoneNumber: "",
           studentName: "",
           interestedCourse: "",
           studentGrade: "",
-          // preferredDate: "",
-          // timezone: "",
-          // timeSlot: ""
         });
         onClose();
 
         setTimeout(() => {
           router.push("/thank-you");
-        }, 2000);
+        }, 1000);
       } else {
         throw new Error("Failed to submit the form.");
       }
@@ -135,15 +174,32 @@ const Register = ({ isOpen, onClose }) => {
                   required
                   className="w-full text-black p-3 text-sm border border-gray-300 rounded-md focus:border-purple-600 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-all duration-200"
                 />
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  placeholder="Phone Number"
-                  value={formData.phoneNumber}
-                  onChange={handleChange}
-                  required
-                  className="w-full text-black p-3 text-sm border border-gray-300 rounded-md focus:border-purple-600 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-all duration-200"
-                />
+                <div className="flex space-x-2">
+                  <select
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleChange}
+                    className="w-1/3 p-3 text-sm text-black border border-gray-300 rounded-md focus:border-purple-600 focus:ring-purple-600"
+                  >
+                    {COUNTRY_CODES.map(({ label, value }) => (
+                      <option key={value + label} value={value}>
+                        {label}
+                      </option>
+                    ))}
+                  </select>
+
+                  <input
+                    type="tel"
+                    name="phoneNumber"
+                    placeholder="1234567890"
+                    value={formData.phoneNumber}
+                    onChange={handleChange}
+                    onBlur={handlePhoneBlur}
+                    maxLength={10}
+                    required
+                    className="flex-1 text-black p-3 text-sm border border-gray-300 rounded-md focus:border-purple-600 focus:ring-purple-600"
+                  />
+                </div>
                 <input
                   type="text"
                   name="studentName"
@@ -191,56 +247,6 @@ const Register = ({ isOpen, onClose }) => {
                 </select>
               </div>
             </div>
-
-            {/* Schedule Preference */}
-            {/* <div>
-              <h3 className="text-sm font-semibold text-gray-800 mb-3">Schedule Preference</h3>
-              <div className="space-y-3">
-                <input
-                  type="date"
-                  name="preferredDate"
-                  value={formData.preferredDate}
-                  onChange={handleChange}
-                  required
-                  min={new Date().toISOString().split("T")[0]}
-                  className="w-full text-black p-3 text-sm border border-gray-300 rounded-md focus:border-purple-600 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-all duration-200"
-                />
-
-                <select
-                  name="timezone"
-                  value={formData.timezone}
-                  onChange={handleChange}
-                  required
-                  className="w-full text-black p-3 text-sm border border-gray-300 rounded-md focus:border-purple-600 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-all duration-200"
-                >
-                  <option value="">Select Time Zone</option>
-                  <option value="IST">India (IST)</option>
-                  <option value="EST">Eastern Time (EST)</option>
-                  <option value="PST">Pacific Time (PST)</option>
-                  <option value="GMT">Greenwich Mean Time (GMT)</option>
-                  <option value="CST">Central Time (CST)</option>
-                </select>
-
-                <select
-                  name="timeSlot"
-                  value={formData.timeSlot}
-                  onChange={handleChange}
-                  required
-                  className="w-full text-black p-3 text-sm border border-gray-300 rounded-md focus:border-purple-600 focus:outline-none focus:ring-1 focus:ring-purple-600 transition-all duration-200"
-                >
-                  <option value="">Select Time Slot</option>
-                  {[
-                    "09:00 - 09:30", "09:30 - 10:00", "10:00 - 10:30", "10:30 - 11:00",
-                    "11:00 - 11:30", "11:30 - 12:00", "12:00 - 12:30", "12:30 - 13:00",
-                    "13:00 - 13:30", "13:30 - 14:00", "14:30 - 15:00", "15:00 - 15:30",
-                    "15:30 - 16:00", "16:30 - 17:00", "17:00 - 17:30", "17:30 - 18:00",
-                    "18:30 - 19:00", "19:00 - 19:30", "20:00 - 20:30"
-                  ].map((slot) => (
-                    <option key={slot} value={slot}>{slot}</option>
-                  ))}
-                </select>
-              </div>
-            </div> */}
 
             {message && (
               <div className={`p-3 rounded-md text-sm ${

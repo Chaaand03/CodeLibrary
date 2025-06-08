@@ -1,8 +1,6 @@
-// components/ViewDetailedCurrForm.js
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-// Extended list of country codes
 const COUNTRY_CODES = [
   { label: "🇺🇸 United States (+1)",     value: "+1"  },
   { label: "🇨🇦 Canada (+1)",            value: "+1"  },
@@ -39,7 +37,21 @@ export default function ViewDetailedCurrForm({ topic, onClose }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((f) => ({ ...f, [name]: value }));
+
+    if (name === "phoneNumber") {
+      const digitsOnly = value.replace(/\D/g, "");
+      setFormData((f) => ({ ...f, phoneNumber: digitsOnly }));
+    } else {
+      setFormData((f) => ({ ...f, [name]: value }));
+    }
+  };
+
+  const handlePhoneBlur = () => {
+    if (formData.phoneNumber.length !== 10) {
+      setMessage("Phone number must be exactly 10 digits.");
+    } else {
+      setMessage("");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -47,7 +59,6 @@ export default function ViewDetailedCurrForm({ topic, onClose }) {
     setLoading(true);
     setError("");
 
-    // Phone number must be exactly 10 digits
     if (!/^\d{10}$/.test(formData.phoneNumber)) {
       setError("Phone number must be exactly 10 digits.");
       setLoading(false);
@@ -99,11 +110,9 @@ export default function ViewDetailedCurrForm({ topic, onClose }) {
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Parent Name */}
           <div>
-            <label className="block text-sm font-medium text-gray-800">
-            Name
-            </label>
             <input
               name="parentName"
+              placeholder="Name"
               value={formData.parentName}
               onChange={handleChange}
               required
@@ -114,9 +123,6 @@ export default function ViewDetailedCurrForm({ topic, onClose }) {
           {/* Country Code + Phone */}
           <div className="grid grid-cols-3 gap-2">
             <div className="col-span-1">
-              <label className="block text-sm font-medium text-gray-800">
-                Country Code
-              </label>
               <select
                 name="countryCode"
                 value={formData.countryCode}
@@ -132,9 +138,6 @@ export default function ViewDetailedCurrForm({ topic, onClose }) {
               </select>
             </div>
             <div className="col-span-2">
-              <label className="block text-sm font-medium text-gray-800">
-                Phone Number
-              </label>
               <input
                 name="phoneNumber"
                 value={formData.phoneNumber}
@@ -153,7 +156,7 @@ export default function ViewDetailedCurrForm({ topic, onClose }) {
             disabled={loading}
             className="w-full bg-purple-700 text-white py-2 rounded-md hover:bg-purple-800 transition"
           >
-            {loading ? "Submitting…" : "Submit & View"}
+            {loading ? "Submitting…" : "Submit & View Course"}
           </button>
         </form>
       </div>

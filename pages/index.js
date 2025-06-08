@@ -1,24 +1,14 @@
 import Head from 'next/head';
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from 'next/image';
-import Link from 'next/link';
-import { FaCalendar, FaHandshake, FaCheckCircle } from "react-icons/fa";
 import { GiBrain } from "react-icons/gi";
 import { MdMenuBook } from "react-icons/md";
 import { FaRocket } from "react-icons/fa";
-import { FaGraduationCap } from "react-icons/fa";
-import { IoMdClock } from "react-icons/io";
-import girlImage from '../public/Image/girl.png';
 import Intersect from '../public/Image/Intersect.png';
-import Source from '../public/Image/Source.png';
-import twoImage from '../public/Image/twoImage.jpg';
-import { FaChalkboardTeacher, FaVideo, FaBook } from "react-icons/fa";
-import { motion } from 'framer-motion';
 import Offering from '../components/Offering';
 import Register from '../components/Register';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Tutors from '../components/Tutors';
 import Testimonials from '../components/Testimonals';
 import OurCoures from '../components/OurCoures';
 
@@ -26,6 +16,7 @@ export default function Home() {
   const [showRegister, setShowRegister] = useState(false);
   const [showScrollPopup, setShowScrollPopup] = useState(false);
   const [hasPopupBeenDismissed, setHasPopupBeenDismissed] = useState(false);
+  const coursesRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,12 +34,27 @@ export default function Home() {
   }, [hasPopupBeenDismissed]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowRegister(true);
-    }, 3000); // Opens after 3 seconds
+    if (!coursesRef.current) return;
 
-    return () => clearTimeout(timer);
-  }, []);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowRegister(true);
+          observer.disconnect();
+        }
+      },
+      {
+        root: null,         
+        rootMargin: "0px",  
+        threshold: 0.1,     
+      }
+    );
+
+    observer.observe(coursesRef.current);
+
+    return () => observer.disconnect();
+  }, [coursesRef]);
+
 
   return (
     <div className="min-h-screen bg-white overflow-hidden">
@@ -100,26 +106,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Features */}
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-black px-4 py-8 max-w-6xl mx-auto">
-        <div className="flex items-center justify-center space-x-3 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <span className="text-2xl sm:text-3xl">🎤</span>
-          <p className="font-bold text-sm sm:text-base md:text-lg">Public Speaking</p>
-        </div>
-
-        <div className="flex items-center justify-center space-x-3 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <span className="text-2xl sm:text-3xl">📁</span>
-          <p className="font-bold text-sm sm:text-base md:text-lg">Career Oriented</p>
-        </div>
-
-        <div className="flex items-center justify-center space-x-3 bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <span className="text-2xl sm:text-3xl">💡</span>
-          <p className="font-bold text-sm sm:text-base md:text-lg">Creative Thinking</p>
-        </div>
-      </div> */}
-
-     
-
       {/* Course Benefits Section */}
       <section className="px-4 sm:px-8 py-12 max-w-6xl mx-auto text-center">
         <h2 className="text-2xl text-[#301934] sm:text-3xl font-bold">Course Benefits</h2>
@@ -156,22 +142,22 @@ export default function Home() {
       <section id="benefits-section" className="bg-[#E6E6FA] px-4 sm:px-8 py-12 max-w-full mx-auto text-center">
         <h2 className="text-2xl text-[#301934] sm:text-3xl font-bold">Course Structure</h2>
 
-        <div className="flex flex-wrap justify-center gap-16 mt-8">
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80">
+        <div className="flex flex-wrap justify-center gap-16 mt-8 ">
+          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
               <GiBrain />
             </div>
             <h3 className="text-lg text-black font-semibold">Start at Your Level</h3>
           </div>
           
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80">
+          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
               <MdMenuBook />
             </div>
             <h3 className="text-lg text-black font-semibold">Master Fundamentals (30 Sessions)</h3>
           </div>
           
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80">
+          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
               <FaRocket />
             </div>
@@ -184,7 +170,9 @@ export default function Home() {
       <Offering />
 
       {/* Our Courses Section */}
+      <div ref={coursesRef}>
       <OurCoures />
+      </div>
 
       {/* Testimonials Section */}
       <Testimonials />
