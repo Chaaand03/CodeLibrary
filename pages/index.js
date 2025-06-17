@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 import { useState, useEffect, useRef } from "react";
 import Image from 'next/image';
 import { GiBrain } from "react-icons/gi";
@@ -59,13 +60,19 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white overflow-hidden">
       <Head>
-        <title>Code.LIBRARY</title>
-        <meta name="description" content="Master math and coding in 30 sessions. Book a free demo with expert tutors. Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
-        <meta name="keywords" content="math coding courses, free demo and flash sale, Online Courses, Learn UX, User Experience, Weekend UX, UX Certification" />
-        <meta name="author" content="Book now,Limited offer" />
+        <title>Fun Online Math & Coding Classes for Kids – Free Demo | Code Library</title>
+        <meta name="description" content=" Interactive 1:1 live math & coding classes for kids! 30-session curriculum, free demo class, personalized plans. Trusted by 5,000+ students. Join Code Library today!" />
+        <meta name="keywords" content="online math classes for kids, coding classes for kids, SAT math preparation, AMC coaching, fun coding for kids, scholastic aptitude test, ap physics, interactive math tutoring, american math competition, online 1:1 tutoring, live coding sessions,online coding classes,math tutoring near me, code library" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://code-library.net/"></link>
+      </Head>
 
-        <!-- Meta Pixel Code -->
-            <script>
+      <Script
+        id="facebook-pixel"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -76,12 +83,18 @@ export default function Home() {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1251646379953168');
             fbq('track', 'PageView');
-            </script>
-            <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1251646379953168&ev=PageView&noscript=1"
-            /></noscript>
-        <!-- End Meta Pixel Code -->
-      </Head>
+          `,
+        }}
+      />
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style={{ display: 'none' }}
+          src="https://www.facebook.com/tr?id=1251646379953168&ev=PageView&noscript=1"
+          alt="facebook-pixel"
+        />
+      </noscript>
 
       {/* Hero Section */}
       <header className="bg-[#f4edfc]">
