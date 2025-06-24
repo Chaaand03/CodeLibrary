@@ -7,11 +7,11 @@ import TandC from "../components/TandC"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
+    parentName: "",
     email: "",
-    phone: "",
-    subject: "",
-    message: ""
+    phoneNumber: "",
+    interestedCourse: "",
+    studentGrade: ""
   });
 
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,7 @@ const Contact = () => {
     setSubmitMessage("");
 
     try {
-      const response = await fetch("https://formspree.io/f/xkndpvak", {
+      const response = await fetch("/api/submit-enquiry", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,11 +42,11 @@ const Contact = () => {
       if (response.ok) {
         setSubmitMessage("Message sent successfully! We'll get back to you soon.");
         setFormData({
-          fullName: "",
+          parentName: "",
           email: "",
-          phone: "",
-          subject: "",
-          message: ""
+          phoneNumber: "",
+          interestedCourse: "",
+          studentGrade: ""
         });
       } else {
         throw new Error("Failed to send message.");
@@ -183,12 +183,12 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="fullName"
+                    name="parentName"
                     value={formData.fullName}
                     onChange={handleChange}
                     placeholder="Enter your full name"
                     required
-                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
+                    className="w-full text-black border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
                   />
                 </div>
 
@@ -204,7 +204,7 @@ const Contact = () => {
                     onChange={handleChange}
                     placeholder="Enter your email address"
                     required
-                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
+                    className="w-full text-black border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
                   />
                 </div>
 
@@ -215,28 +215,28 @@ const Contact = () => {
                   </label>
                   <input
                     type="text"
-                    name="phone"
+                    name="phoneNumber"
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Enter your phone number"
                     required
-                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
+                    className="w-full text-black border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
                   />
                 </div>
 
                 {/* Subject */}
                 <div>
                   <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
-                    Subject *
+                  Interested Course *
                   </label>
                   <input
                     type="text"
-                    name="subject"
+                    name="interestedCourse"
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="Enter message subject"
                     required
-                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
+                    className="w-full text-black border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200"
                   />
                 </div>
 
@@ -247,12 +247,12 @@ const Contact = () => {
                   </label>
                   <textarea
                     rows="4"
-                    name="message"
+                    name="studentGrade"
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Write your message"
                     required
-                    className="w-full border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200 resize-vertical min-h-[100px]"
+                    className="w-full text-black border border-gray-300 rounded-md px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent transition-all duration-200 resize-vertical min-h-[100px]"
                   ></textarea>
                 </div>
 
