@@ -317,7 +317,17 @@ const Contact = () => {
         </div>
       </div>
       
-      <TandC />
+      {/* <TandC /> */}
+      <div className="text-center mt-10">
+          <a
+            href="/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-purple-700 underline hover:text-purple-900"
+          >
+            View Terms & Conditions
+          </a>
+        </div>
     </div>
     </section>
   );

@@ -30,31 +30,34 @@ export default function BlogSection() {
     return (
         <>
             <Head>
-                <title>Why Swift UI Should Be on the Radar of Every Mobile Developer</title>
+                <title>Code-Library Blogs list</title>
                 <meta name="description" content="Discover why Swift UI is essential for mobile developers. Learn more about its features and advantages in mobile development." />
                 <meta name="keywords" content="Swift UI, Mobile Development, UI Design, Apple, Programming" />
             </Head>
-            <section className="bg-[#EEF5FF] py-12 px-2 md:px-10 lg:px-10">
-                <div className="max-w-6xl  mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <p className="text-gray-600 text-sm">By Themadbrains in <span className="text-green-600 font-semibold">inspiration</span></p>
-                        <h1 className="text-3xl md:text-4xl font-bold text-[#2D3A55] mt-2">Why Swift UI Should Be on the Radar of Every Mobile Developer</h1>
-                        {/* <p className="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sitamet, consectetur adipiscing elit, sed do eiusmod tempor</p> */}
-                        <button
-                            onClick={handleOpenRegister}
-                            className="mt-6 bg-[#1DBF73] text-white px-6 py-3 rounded-md font-medium hover:bg-[#16a062] transition duration-300"
-                        >
-                            Start learning now
-                        </button>
-                    </div>
-                    <div className="relative w-full h-64 md:h-80">
-                        <Image src={top} alt="Swift UI Blog" layout="fill" objectFit="cover" className="rounded-md" />
-                    </div>
-                </div>
-            </section>
+            <section className="bg-gradient-to-br from-[#EDE9FE] to-[#F3E8FF] py-16 px-6 md:px-16 lg:px-24">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 className="text-4xl font-bold text-[#301934] mb-4 leading-tight">
+              Learn Beyond Classrooms With Our Expert Blogs
+            </h1>
+            <p className="text-lg text-[#4B3869] mb-6">
+              Dive deep into concepts that matter. Explore interactive articles, student tips, and coding insights written by our top mentors.
+            </p>
+            <button
+              onClick={handleOpenRegister}
+              className="bg-[#6B21A8] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#5A189A] transition duration-300"
+            >
+              Start Learning Now
+            </button>
+          </div>
+          <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+            <Image src={top} alt="Blog Banner" layout="fill" objectFit="cover" className="rounded-lg" />
+          </div>
+        </div>
+      </section>
 
-            <section className="py-12 px-6 md:px-16 lg:px-24">
-                <h2 className="text-2xl font-semibold text-[#E8F5E9] mb-6">
+            <section className="py-12 px-6 bg-white md:px-16 lg:px-24">
+                <h2 className="text-3xl font-semibold mb-6 text-[#301934] text-center py-8">
                     Reading Blog List
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

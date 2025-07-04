@@ -143,7 +143,7 @@ export default function Home() {
         <p className="text-gray-600 mt-2">Our amazing 3-step Process</p>
         
         <div className="flex flex-wrap justify-center gap-12 mt-8 sm:gap-16">
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105 bg-[#DEA8DE]">
             <div className="flex text-black justify-center items-center text-4xl transition-colors">
               {/* <FaRocket /> */}
             </div>
@@ -151,7 +151,7 @@ export default function Home() {
             <p className="font-thin text-black mt-2">Progress at Your Own Pace – No Rush, No Pressure.</p>
           </div>
           
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105 bg-[#DEA8DE]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
               {/* <FaGraduationCap /> */}
             </div>
@@ -159,7 +159,7 @@ export default function Home() {
             <p className="font-thin text-black mt-2">Interactive Learning – "No Boring Lectures."</p>
           </div>
           
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105 bg-[#DEA8DE]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
               {/* <IoMdClock /> */}
             </div>
@@ -174,25 +174,25 @@ export default function Home() {
         <h2 className="text-2xl text-[#301934] sm:text-3xl font-bold">Course Structure</h2>
 
         <div className="flex flex-wrap justify-center gap-16 mt-8 ">
-          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
-            <div className="flex justify-center items-center text-4xl text-black transition-colors">
+          <div className="p-6 bg-[#301934] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105">
+            <div className="flex justify-center items-center text-4xl text-[#EFE3EF] transition-colors">
               <GiBrain />
             </div>
-            <h3 className="text-lg text-black font-semibold">Start at Your Level</h3>
+            <h3 className="text-lg text-[#EFE3EF] font-semibold">Start at Your Level</h3>
           </div>
           
-          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
-            <div className="flex justify-center items-center text-4xl text-black transition-colors">
+          <div className="p-6 bg-[#301934] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105">
+            <div className="flex justify-center items-center text-4xl text-[#EFE3EF] transition-colors">
               <MdMenuBook />
             </div>
-            <h3 className="text-lg text-black font-semibold">Master Fundamentals (30 Sessions)</h3>
+            <h3 className="text-lg text-[#EFE3EF] font-semibold">Master Fundamentals (30 Sessions)</h3>
           </div>
           
-          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
-            <div className="flex justify-center items-center text-4xl text-black transition-colors">
+          <div className="p-6 bg-[#301934] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105">
+            <div className="flex justify-center items-center text-4xl text-[#EFE3EF] transition-colors">
               <FaRocket />
             </div>
-            <h3 className="text-lg text-black font-semibold">Advanced Topics (30 Sessions)</h3>
+            <h3 className="text-lg text-[#EFE3EF] font-semibold">Advanced Topics (30 Sessions)</h3>
           </div>
         </div>
       </section>

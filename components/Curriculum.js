@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import EnquiryForm from './EnquiryForm';
 import Register from './Register';
-import ViewDetailedCurrForm from './ViewDetailedCurrForm'; 
+// import ViewDetailedCurrForm from './ViewDetailedCurrForm'; 
 
 // Tabs
 const classTabs = ['Class K-2', 'Class 3-5', 'Class 6-8', 'Class 9-12', 'Competitive Exams', 'Coding'];
@@ -87,7 +87,7 @@ export default function Curriculum({ selectedTab }) {
   const [selectedClassTab, setSelectedClassTab] = useState(selectedTab);
   const [selectedGrade, setSelectedGrade] = useState('Grade KG');
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  const [detailedTopic, setDetailedTopic] = useState(null);
+  // const [detailedTopic, setDetailedTopic] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const curriculumRef = useRef(null);
 
@@ -111,29 +111,28 @@ export default function Curriculum({ selectedTab }) {
   const topics = topicsData[selectedClassTab]?.[selectedGrade] || [];
 
   // Handle view curriculum button click
-  // const handleViewCurriculum = () => {
-  //   const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade];
-  //   if (pdfLink) {
-  //     window.open(pdfLink, '_blank');
-  //   }
-  // };
-
   const handleViewCurriculum = () => {
-    const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade] || '';
-    setDetailedTopic({
-      title: selectedClassTab,
-      grade: selectedGrade,
-      pdfLink,
-    });
+    const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade];
+    if (pdfLink) {
+      window.open(pdfLink, '_blank');
+    }
   };
+
+  // Handle view detailed curriculum form with selected class and grade
+  // const handleViewCurriculum = () => {
+  //   const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade] || '';
+  //   setDetailedTopic({
+  //     title: selectedClassTab,
+  //     grade: selectedGrade,
+  //     pdfLink,
+  //   });
+  // };
 
   const handleViewCourse = (courseName) => {
     const link = pdfLinksData[selectedClassTab]?.[courseName];
-    if (!link) return console.warn("No PDF for", courseName);
-    setDetailedTopic({
-      title: courseName,
-      pdfLink: link,
-    });
+    if (link) {
+      window.open(link, '_blank');
+    }
   };
   
 
@@ -162,12 +161,12 @@ export default function Curriculum({ selectedTab }) {
               </a>
             ))}
           </div>
-          {detailedTopic && (
+          {/* {detailedTopic && (
             <ViewDetailedCurrForm
               topic={detailedTopic}
               onClose={() => setDetailedTopic(null)}
             />
-          )}
+          )} */}
         </div>
 
         {/* Enquiry Form */}
@@ -223,12 +222,12 @@ export default function Curriculum({ selectedTab }) {
                 View Detailed Curriculum
               </button>
             </div>
-            {detailedTopic && (
+            {/* {detailedTopic && (
               <ViewDetailedCurrForm
                 topic={detailedTopic}
                 onClose={() => setDetailedTopic(null)}
               />
-            )}
+            )} */}
           </div>
 
           {/* Right: Enquiry Form */}

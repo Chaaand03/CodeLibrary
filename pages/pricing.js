@@ -69,6 +69,22 @@ const pricingData = {
         sessions: "144",
       },
     ],
+    INR: [
+      {
+        now: "₹899/session",
+        regular: "₹1199/session",
+        discount: "28% Discount",
+        duration: "12",
+        sessions: "96",
+      },
+      {
+        now: "₹799/session",
+        regular: "₹1199/session",
+        discount: "36% Discount",
+        duration: "18",
+        sessions: "144",
+      },
+    ],
   },
   coding: {
     USD: [
@@ -135,6 +151,22 @@ const pricingData = {
         sessions: "144",
       },
     ],
+    INR: [
+      {
+        now: "₹999/session",
+        regular: "₹1499/session",
+        discount: "30% Discount",
+        duration: "12",
+        sessions: "96",
+      },
+      {
+        now: "₹899/session",
+        regular: "₹1499/session",
+        discount: "40% Discount",
+        duration: "18",
+        sessions: "144",
+      },
+    ],
   },
   exam: {
     USD: [
@@ -187,7 +219,7 @@ const Pricing = () => {
     if (activeTab === "exam") {
       return ["USD", "CAD"];
     }
-    return ["USD", "CAD", "GBP", "EURO"];
+    return ["USD", "CAD", "GBP", "EURO", "INR"];
   };
 
   // Handle currency change for individual exam cards
@@ -200,7 +232,7 @@ const Pricing = () => {
   // Reset currency if not available for the selected tab
   const handleTabChange = (tab) => {
     setActiveTab(tab);
-    const availableCurrencies = tab === "exam" ? ["USD", "CAD"] : ["USD", "CAD", "GBP", "EURO"];
+    const availableCurrencies = tab === "exam" ? ["USD", "CAD"] : ["USD", "CAD", "GBP", "EURO", "INR"];
     if (!availableCurrencies.includes(selectedCurrency)) {
       setSelectedCurrency("USD");
     }
@@ -285,7 +317,7 @@ const Pricing = () => {
                         </select>
                         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center">
                           <svg className="fill-current h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                           </svg>
                         </div>
                       </div>
@@ -356,7 +388,7 @@ const Pricing = () => {
                       </select>
                       <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center">
                         <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                         </svg>
                       </div>
                     </div>
@@ -385,7 +417,7 @@ const Pricing = () => {
 
                   <button
                     onClick={() => setShowRegister(true)}
-                                       className="mt-6 w-full border border-purple-700 text-purple-700 py-2 rounded-lg font-medium hover:bg-purple-100 transition"
+                    className="mt-6 w-full border border-purple-700 text-purple-700 py-2 rounded-lg font-medium hover:bg-purple-100 transition"
                   >
                     Buy Now
                   </button>
@@ -396,7 +428,18 @@ const Pricing = () => {
         </div>
 
         {/* Terms & Conditions */}
-        <TandC />
+        {/* <TandC /> */}
+        <div className="text-center mt-10">
+          <a
+            href="/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-purple-700 underline hover:text-purple-900"
+          >
+            View Terms & Conditions
+          </a>
+        </div>
+
       </section>
 
       {/* Register Modal */}

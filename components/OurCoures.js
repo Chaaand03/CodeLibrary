@@ -78,12 +78,14 @@ export default function CourseMenu() {
             />
 
             <div className="mt-4">
-              <button
-                onClick={() => handleKnowMore(course)}
+              <a
+                href={course.fileLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block border border-purple-700 text-purple-700 mb-2 px-4 py-2 rounded-md text-sm font-semibold hover:bg-purple-100 transition"
               >
                 Know More
-              </button>
+              </a>
             </div>
           </motion.div>
         ))}
@@ -98,12 +100,12 @@ export default function CourseMenu() {
       </div>
 
       {/* Pop-up Form */}
-      {detailedTopic && (
+      {/* {detailedTopic && (
         <ViewDetailedCurrForm
           topic={detailedTopic}
           onClose={() => setDetailedTopic(null)}
         />
-      )}
+      )} */}
     </section>
   );
 }
