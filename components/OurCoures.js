@@ -21,19 +21,21 @@ const courses = [
     name: "",
     detail: "Python",
     img: python,
-    fileLink: "https://drive.google.com/file/d/1LE0oUrlRee54DL7NjWwRDmduXU_xGeq9/view?usp=sharing",
+    fileLink: "https://pythoncurriculum.code-library.net/",
   },
   {
     name: "",
     detail: "Web Development",
     img: web,
-    fileLink: "https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view?usp=sharing",
+    fileLink: "/Courses",
+    // fileLink: "https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view?usp=sharing",
   },
   {
     name: "",
     detail: "Scratch",
     img: scratch ,
-    fileLink: "https://drive.google.com/file/d/1JQblPVA71zWzFqA1ydh7ddM_fyrnoWJM/view?usp=sharing",
+    fileLink: "/Courses",
+    // fileLink: "https://drive.google.com/file/d/1JQblPVA71zWzFqA1ydh7ddM_fyrnoWJM/view?usp=sharing",
   },
 ];
 
