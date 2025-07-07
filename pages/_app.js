@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
     <>
       <GTMScript />
       <Head>
-        <link rel="icon" href="/Image/Codelibraylogo.png" />
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <title>CODE.LIBRARY</title>
       </Head>
         <Navbar />
