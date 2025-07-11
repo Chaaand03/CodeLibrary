@@ -21,7 +21,8 @@ const courses = [
     name: "",
     detail: "Python",
     img: python,
-    fileLink: "https://pythoncurriculum.code-library.net/",
+    fileLink: "/Courses",
+    // fileLink: "https://pythoncurriculum.code-library.net/",
   },
   {
     name: "",
