@@ -237,14 +237,14 @@ export default function Curriculum({ selectedTab }) {
                 </h4>
               </div>
             ))}
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <button
                 onClick={handleViewCurriculum}
                 className="text-black font-semibold underline underline-offset-2 hover:text-purple-700 transition-all duration-500 transform hover:scale-105 hover:translate-x-2 cursor-pointer"
               >
                 View Detailed Curriculum
               </button>
-            </div>
+            </div> */}
             {/* {detailedTopic && (
               <ViewDetailedCurrForm
                 topic={detailedTopic}
