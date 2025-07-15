@@ -98,7 +98,8 @@ const pdfLinksData = {
 
   },
   'Coding': {
-    'Python': "https://pythoncurriculum.code-library.net/",
+    // 'Python': "https://pythoncurriculum.code-library.net/",
+    'Python': '',
     'Web Development': '',
     'Scratch': '',
     // 'Web Development': 'https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view',
