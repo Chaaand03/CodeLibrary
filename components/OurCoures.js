@@ -21,19 +21,22 @@ const courses = [
     name: "",
     detail: "Python",
     img: python,
-    fileLink: "https://drive.google.com/file/d/1LE0oUrlRee54DL7NjWwRDmduXU_xGeq9/view?usp=sharing",
+    fileLink: "/Courses",
+    // fileLink: "https://pythoncurriculum.code-library.net/",
   },
   {
     name: "",
     detail: "Web Development",
     img: web,
-    fileLink: "https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view?usp=sharing",
+    fileLink: "/Courses",
+    // fileLink: "https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view?usp=sharing",
   },
   {
     name: "",
     detail: "Scratch",
     img: scratch ,
-    fileLink: "https://drive.google.com/file/d/1JQblPVA71zWzFqA1ydh7ddM_fyrnoWJM/view?usp=sharing",
+    fileLink: "/Courses",
+    // fileLink: "https://drive.google.com/file/d/1JQblPVA71zWzFqA1ydh7ddM_fyrnoWJM/view?usp=sharing",
   },
 ];
 
@@ -78,12 +81,14 @@ export default function CourseMenu() {
             />
 
             <div className="mt-4">
-              <button
-                onClick={() => handleKnowMore(course)}
+              <a
+                href={course.fileLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block border border-purple-700 text-purple-700 mb-2 px-4 py-2 rounded-md text-sm font-semibold hover:bg-purple-100 transition"
               >
                 Know More
-              </button>
+              </a>
             </div>
           </motion.div>
         ))}
@@ -98,12 +103,12 @@ export default function CourseMenu() {
       </div>
 
       {/* Pop-up Form */}
-      {detailedTopic && (
+      {/* {detailedTopic && (
         <ViewDetailedCurrForm
           topic={detailedTopic}
           onClose={() => setDetailedTopic(null)}
         />
-      )}
+      )} */}
     </section>
   );
 }

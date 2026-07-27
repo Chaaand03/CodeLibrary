@@ -30,10 +30,10 @@ const Navbar = () => {
             <div className="hidden md:flex space-x-6 ml-12">
               <Link href="/" className="text-purple-800 hover:font-bold">Home</Link>
               <Link href="/Courses" className="text-purple-800 hover:font-bold">Courses</Link>
-              <Link href="/priceing" className="text-purple-800 hover:font-bold">Pricing</Link>
+              <Link href="/pricing" className="text-purple-800 hover:font-bold">Pricing</Link>
               <Link href="/about" className="text-purple-800 hover:font-bold">About Us</Link>
               <Link href="/ContactUs" className="text-purple-800 hover:font-bold">Contact Us</Link>
-              <Link href="/blog" className="text-purple-800 hover:font-bold">Blog</Link>
+              <Link href="/blog" className="text-purple-800 hover:font-bold">Blogs</Link>
             </div>
           </div>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
             <Link href="/Courses" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
               Courses
             </Link>
-            <Link href="/priceing" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
+            <Link href="/pricing" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
               Pricing
             </Link>
             <Link href="/about" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
@@ -85,7 +85,7 @@ const Navbar = () => {
               Contact Us
             </Link>
             <Link href="/blog" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>
-              Blog
+              Blogs
             </Link>
             <button
               onClick={() => { openRegister(); closeMobileMenu(); }}
@@ -95,23 +95,6 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-          // <div className="md:hidden px-4 pb-6 bg-white shadow-md">
-          //   <Link href="/" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Home</Link>
-          //   <Link href="/Courses" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Courses</Link>
-          //   <Link href="/priceing" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Pricing</Link>
-          //   <Link href="/about" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>About Us</Link>
-          //   <Link href="/ContactUs" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Contact Us</Link>
-          //   <Link href="/blog" className="block py-2 text-black hover:font-bold" onClick={closeMobileMenu}>Blog</Link>
-          //   <button
-          //     onClick={() => {
-          //       openRegister();
-          //       closeMobileMenu();
-          //     }}
-          //     className="w-full bg-purple-800 text-white font-semibold px-4 py-2 rounded-md mt-4 hover:bg-purple-900 transition"
-          //   >
-          //     Sign Up
-          //   </button>
-          // </div>
         )}
       </nav>
 

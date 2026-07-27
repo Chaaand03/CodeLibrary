@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import learningImg from '../public/Image/Course.png'; // Adjust if needed
+import learningImg from '../public/Image/Course.png';
 import Curriculum from '../components/Curriculum';
 
 const curriculumSteps = [

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 import { useState, useEffect, useRef } from "react";
 import Image from 'next/image';
 import { GiBrain } from "react-icons/gi";
@@ -59,12 +60,19 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white overflow-hidden">
       <Head>
-        <title>Code.LIBRARY</title>
-        <meta name="description" content="Master math and coding in 30 sessions. Book a free demo with expert tutors. Limited flash sale – 30-40% off! Trusted by 5,000+ students." />
-        <meta name="keywords" content="math coding courses, free demo and flash sale, Online Courses, Learn UX, User Experience, Weekend UX, UX Certification" />
-        <meta name="author" content="Book now,Limited offer" />
-        <!-- Meta Pixel Code -->
-            <script>
+        <title>Fun Online Math & Coding Classes for Kids – Free Demo | Code Library</title>
+        <meta name="description" content=" Interactive 1:1 live math & coding classes for kids! 30-session curriculum, free demo class, personalized plans. Trusted by 5,000+ students. Join Code Library today!" />
+        <meta name="keywords" content="online math classes for kids, coding classes for kids, SAT math preparation, AMC coaching, fun coding for kids, scholastic aptitude test, ap physics, interactive math tutoring, american math competition, online 1:1 tutoring, live coding sessions,online coding classes,math tutoring near me, code library" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://code-library.net/"></link>
+      </Head>
+
+      <Script
+        id="facebook-pixel"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -75,12 +83,18 @@ export default function Home() {
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '1251646379953168');
             fbq('track', 'PageView');
-            </script>
-            <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1251646379953168&ev=PageView&noscript=1"
-            /></noscript>
-        <!-- End Meta Pixel Code -->
-      </Head>
+          `,
+        }}
+      />
+      <noscript>
+        <img
+          height="1"
+          width="1"
+          style={{ display: 'none' }}
+          src="https://www.facebook.com/tr?id=1251646379953168&ev=PageView&noscript=1"
+          alt="facebook-pixel"
+        />
+      </noscript>
 
       {/* Hero Section */}
       <header className="bg-[#f4edfc]">
@@ -129,7 +143,7 @@ export default function Home() {
         <p className="text-gray-600 mt-2">Our amazing 3-step Process</p>
         
         <div className="flex flex-wrap justify-center gap-12 mt-8 sm:gap-16">
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105 bg-[#DEA8DE]">
             <div className="flex text-black justify-center items-center text-4xl transition-colors">
               {/* <FaRocket /> */}
             </div>
@@ -137,7 +151,7 @@ export default function Home() {
             <p className="font-thin text-black mt-2">Progress at Your Own Pace – No Rush, No Pressure.</p>
           </div>
           
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105 bg-[#DEA8DE]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
               {/* <FaGraduationCap /> */}
             </div>
@@ -145,7 +159,7 @@ export default function Home() {
             <p className="font-thin text-black mt-2">Interactive Learning – "No Boring Lectures."</p>
           </div>
           
-          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 hover:bg-[#DEA8DE]">
+          <div className="p-6 bg-[#EFE3EF] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105 bg-[#DEA8DE]">
             <div className="flex justify-center items-center text-4xl text-black transition-colors">
               {/* <IoMdClock /> */}
             </div>
@@ -160,25 +174,25 @@ export default function Home() {
         <h2 className="text-2xl text-[#301934] sm:text-3xl font-bold">Course Structure</h2>
 
         <div className="flex flex-wrap justify-center gap-16 mt-8 ">
-          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
-            <div className="flex justify-center items-center text-4xl text-black transition-colors">
+          <div className="p-6 bg-[#301934] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105">
+            <div className="flex justify-center items-center text-4xl text-[#EFE3EF] transition-colors">
               <GiBrain />
             </div>
-            <h3 className="text-lg text-black font-semibold">Start at Your Level</h3>
+            <h3 className="text-lg text-[#EFE3EF] font-semibold">Start at Your Level</h3>
           </div>
           
-          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
-            <div className="flex justify-center items-center text-4xl text-black transition-colors">
+          <div className="p-6 bg-[#301934] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105">
+            <div className="flex justify-center items-center text-4xl text-[#EFE3EF] transition-colors">
               <MdMenuBook />
             </div>
-            <h3 className="text-lg text-black font-semibold">Master Fundamentals (30 Sessions)</h3>
+            <h3 className="text-lg text-[#EFE3EF] font-semibold">Master Fundamentals (30 Sessions)</h3>
           </div>
           
-          <div className="p-6 bg-[#DEA8DE] rounded-lg shadow-md text-center w-80 hover:bg-[#EFE3EF]">
-            <div className="flex justify-center items-center text-4xl text-black transition-colors">
+          <div className="p-6 bg-[#301934] rounded-lg shadow-md text-center w-80 transform transition-transform duration-300 hover:scale-105">
+            <div className="flex justify-center items-center text-4xl text-[#EFE3EF] transition-colors">
               <FaRocket />
             </div>
-            <h3 className="text-lg text-black font-semibold">Advanced Topics (30 Sessions)</h3>
+            <h3 className="text-lg text-[#EFE3EF] font-semibold">Advanced Topics (30 Sessions)</h3>
           </div>
         </div>
       </section>

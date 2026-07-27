@@ -3,10 +3,10 @@ import Head from "next/head";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { CartProvider } from '../context/CartContext';
-import { TutorBirdProvider } from '../context/TutorBirdContext';
 import SubscribeSection from '../components/SubscribeSection';
 import { useEffect } from 'react';
 import SignUpPopup from "@/components/SignUpPopup";
+import GTMScript from "@/components/GTMScript";
 
 export default function App({ Component, pageProps }) {
   // Clean up any modal containers on route changes
@@ -22,9 +22,10 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <TutorBirdProvider>
+    <>
+      <GTMScript />
       <Head>
-        <link rel="icon" href="/Image/Codelibraylogo.png" />
+      <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <title>CODE.LIBRARY</title>
       </Head>
         <Navbar />
@@ -34,6 +35,6 @@ export default function App({ Component, pageProps }) {
         <SubscribeSection />
         <Footer />
       </CartProvider>
-    </TutorBirdProvider>
+    </>
   );
 }

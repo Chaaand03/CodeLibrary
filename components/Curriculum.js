@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import EnquiryForm from './EnquiryForm';
 import Register from './Register';
-import ViewDetailedCurrForm from './ViewDetailedCurrForm'; 
+// import ViewDetailedCurrForm from './ViewDetailedCurrForm'; 
 
 // Tabs
 const classTabs = ['Class K-2', 'Class 3-5', 'Class 6-8', 'Class 9-12', 'Competitive Exams', 'Coding'];
@@ -45,24 +45,45 @@ const topicsData = {
 
 // PDF Links Data - Based on Class and Grade
 const pdfLinksData = {
+  // 'Class K-2': {
+  //   'Kindergarten': 'https://drive.google.com/file/d/1mQbRYPLR17_Ri5d91n65ZTITEnDJFvVx/view?usp=sharing',
+  //   'Grade 1': 'https://drive.google.com/file/d/1u4-LYjCq3slgmnJy1HsBZjIDkwMsdQCA/view?usp=sharing',
+  //   'Grade 2': 'https://drive.google.com/file/d/1KA41aBcI_LbWx8POsqZwOIG6sctISFZJ/view?usp=sharing',
+  // },
+  // 'Class 3-5': {
+  //   'Grade 3': 'https://drive.google.com/file/d/10fGfe47MOU3UNBDcxUtbsUFTbi1Fymg1/view?usp=sharing',
+  //   'Grade 4': 'https://drive.google.com/file/d/1pzMG7X8DCQgujCUqYdqkhb_1LO3aXmyr/view?usp=sharing',
+  //   'Grade 5': 'https://drive.google.com/file/d/1qUjvYpYqmpueouOb5OHVIDyOyZCMmX6R/view?usp=sharing',
+  // },
+  // 'Class 6-8': {
+  //   'Grade 6': 'https://drive.google.com/file/d/1e3RsEIBzV2f6DS7EXAGNXdAvy5edFUy-/view?usp=sharing',
+  //   'Grade 7': 'https://drive.google.com/file/d/1IBURP-dpX7PwXhJs9me4ZppdoTT_dtXZ/view?usp=sharing',
+  //   'Grade 8': 'https://drive.google.com/file/d/1IlnXrlWQZY_TEEUp-1OBkOe-1xFMIzeV/view?usp=sharing',
+  // },
+  // 'Class 9-12': {
+  //   'Grade 9': 'https://drive.google.com/file/d/1WduPQ00OvDO3mae8vmj1K3uA5sNYqQP-/view?usp=sharing',
+  //   'Grade 10': 'https://drive.google.com/file/d/1591cxpWkp6Oky5P1vXzxkAq2SOAF3Vrb/view?usp=sharing',
+  //   'Grade 11': '',
+  //   'Grade 12': '',
+  // },
   'Class K-2': {
-    'Kindergarten': 'https://drive.google.com/file/d/1mQbRYPLR17_Ri5d91n65ZTITEnDJFvVx/view?usp=sharing',
-    'Grade 1': 'https://drive.google.com/file/d/1u4-LYjCq3slgmnJy1HsBZjIDkwMsdQCA/view?usp=sharing',
-    'Grade 2': 'https://drive.google.com/file/d/1KA41aBcI_LbWx8POsqZwOIG6sctISFZJ/view?usp=sharing',
+    'Kindergarten': '',
+    'Grade 1': '',
+    'Grade 2': '',
   },
   'Class 3-5': {
-    'Grade 3': 'https://drive.google.com/file/d/10fGfe47MOU3UNBDcxUtbsUFTbi1Fymg1/view?usp=sharing',
-    'Grade 4': 'https://drive.google.com/file/d/1pzMG7X8DCQgujCUqYdqkhb_1LO3aXmyr/view?usp=sharing',
-    'Grade 5': 'https://drive.google.com/file/d/1qUjvYpYqmpueouOb5OHVIDyOyZCMmX6R/view?usp=sharing',
+    'Grade 3': '',
+    'Grade 4': '',
+    'Grade 5': '',
   },
   'Class 6-8': {
-    'Grade 6': 'https://drive.google.com/file/d/1e3RsEIBzV2f6DS7EXAGNXdAvy5edFUy-/view?usp=sharing',
-    'Grade 7': 'https://drive.google.com/file/d/1IBURP-dpX7PwXhJs9me4ZppdoTT_dtXZ/view?usp=sharing',
-    'Grade 8': 'https://drive.google.com/file/d/1IlnXrlWQZY_TEEUp-1OBkOe-1xFMIzeV/view?usp=sharing',
+    'Grade 6': '',
+    'Grade 7': '',
+    'Grade 8': '',
   },
   'Class 9-12': {
-    'Grade 9': 'https://drive.google.com/file/d/1WduPQ00OvDO3mae8vmj1K3uA5sNYqQP-/view?usp=sharing',
-    'Grade 10': 'https://drive.google.com/file/d/1591cxpWkp6Oky5P1vXzxkAq2SOAF3Vrb/view?usp=sharing',
+    'Grade 9': '',
+    'Grade 10': '',
     'Grade 11': '',
     'Grade 12': '',
   },
@@ -77,9 +98,12 @@ const pdfLinksData = {
 
   },
   'Coding': {
-    'Python': 'https://drive.google.com/file/d/1LE0oUrlRee54DL7NjWwRDmduXU_xGeq9/view',
-    'Web Development': 'https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view',
-    'Scratch': 'https://drive.google.com/file/d/1JQblPVA71zWzFqA1ydh7ddM_fyrnoWJM/view',
+    // 'Python': "https://pythoncurriculum.code-library.net/",
+    'Python': '',
+    'Web Development': '',
+    'Scratch': '',
+    // 'Web Development': 'https://drive.google.com/file/d/1JUAdylFRpuSyfOzlXYNToumeEdP-FYrs/view',
+    // 'Scratch': 'https://drive.google.com/file/d/1JQblPVA71zWzFqA1ydh7ddM_fyrnoWJM/view',
   },
 };
 
@@ -87,7 +111,7 @@ export default function Curriculum({ selectedTab }) {
   const [selectedClassTab, setSelectedClassTab] = useState(selectedTab);
   const [selectedGrade, setSelectedGrade] = useState('Grade KG');
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  const [detailedTopic, setDetailedTopic] = useState(null);
+  // const [detailedTopic, setDetailedTopic] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const curriculumRef = useRef(null);
 
@@ -111,29 +135,28 @@ export default function Curriculum({ selectedTab }) {
   const topics = topicsData[selectedClassTab]?.[selectedGrade] || [];
 
   // Handle view curriculum button click
-  // const handleViewCurriculum = () => {
-  //   const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade];
-  //   if (pdfLink) {
-  //     window.open(pdfLink, '_blank');
-  //   }
-  // };
-
   const handleViewCurriculum = () => {
-    const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade] || '';
-    setDetailedTopic({
-      title: selectedClassTab,
-      grade: selectedGrade,
-      pdfLink,
-    });
+    const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade];
+    if (pdfLink) {
+      window.open(pdfLink, '_blank');
+    }
   };
+
+  // Handle view detailed curriculum form with selected class and grade
+  // const handleViewCurriculum = () => {
+  //   const pdfLink = pdfLinksData[selectedClassTab]?.[selectedGrade] || '';
+  //   setDetailedTopic({
+  //     title: selectedClassTab,
+  //     grade: selectedGrade,
+  //     pdfLink,
+  //   });
+  // };
 
   const handleViewCourse = (courseName) => {
     const link = pdfLinksData[selectedClassTab]?.[courseName];
-    if (!link) return console.warn("No PDF for", courseName);
-    setDetailedTopic({
-      title: courseName,
-      pdfLink: link,
-    });
+    if (link) {
+      window.open(link, '_blank');
+    }
   };
   
 
@@ -162,12 +185,12 @@ export default function Curriculum({ selectedTab }) {
               </a>
             ))}
           </div>
-          {detailedTopic && (
+          {/* {detailedTopic && (
             <ViewDetailedCurrForm
               topic={detailedTopic}
               onClose={() => setDetailedTopic(null)}
             />
-          )}
+          )} */}
         </div>
 
         {/* Enquiry Form */}
@@ -215,20 +238,20 @@ export default function Curriculum({ selectedTab }) {
                 </h4>
               </div>
             ))}
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <button
                 onClick={handleViewCurriculum}
                 className="text-black font-semibold underline underline-offset-2 hover:text-purple-700 transition-all duration-500 transform hover:scale-105 hover:translate-x-2 cursor-pointer"
               >
                 View Detailed Curriculum
               </button>
-            </div>
-            {detailedTopic && (
+            </div> */}
+            {/* {detailedTopic && (
               <ViewDetailedCurrForm
                 topic={detailedTopic}
                 onClose={() => setDetailedTopic(null)}
               />
-            )}
+            )} */}
           </div>
 
           {/* Right: Enquiry Form */}
